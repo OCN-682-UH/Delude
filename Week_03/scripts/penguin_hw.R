@@ -6,7 +6,8 @@
 ##Libraries
 library(palmerpenguins)
 library(tidyverse)
-glimpse(penguins)
+#glimpse(penguins)
+library(here)
 
 ##Functions
   #NA for now
@@ -28,5 +29,18 @@ glimpse(penguins)
 #         color = "Species",
 #         caption = "Source: Palmer Station LTER / palmerpenguins package") +
 #  scale_color_viridis_d()
+
+  ##Follow along code from Lecture 6
+ggplot(data = penguins,
+      mapping = aes( x = bill_depth_mm,
+                     y = bill_length_mm,
+                     color = species)) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+       labs(title = "Bill depth and length",
+            subtitle = "Dimensions for Adelie, Chinstrap, and Gentoo Penguins",
+            x = "Bill depth (mm)", y = "Bill length(mm)",
+            caption = "Source: Palmer Station LTER / palmerpenguins package") +
+  +   scale_color_manual(values = beyonce_palette(18))
 
   ##Homework code starts here
