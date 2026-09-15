@@ -1,4 +1,15 @@
 ###### Week 2 scripting assignment is done!
+###### Week 3 plotting assignment is done!
+
+# *Week_03*
+
+Contained in this assignment repo is:
+
+-A script to:
+  -Create a colorful violin plot of the distribution of weights of penguins by island and species, separated by sex
+  -Commented-out classwork to assist in syntax building
+-Two .png output images of the classwork and homework graphs
+
 
 # *Week_02*
 
