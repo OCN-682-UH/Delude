@@ -2,12 +2,15 @@
 #Mano'ike Delude
 
 ##This script is meant to
-#Clean the chemistry data
-  #Filter out a subset
-  #Pivot longer or wider
-  #Calculate summary stats
-  #Export to csv
-  #Plot data (not a boxplot), and export to .png
+  #Clean the chemistry data
+  #Filter out W's site data
+  #Pivot numerical data to a longer format for easier analysis
+  #Calculate the mean and standard deviation of those stats
+  #Export analysis to csv
+#Then
+  #Plot the mean of different chemistry data in their own graphs, separated by High and Low tide readings
+  #(in order to visualize how water chemistry differs between tides)
+  #Then pretty-up the plot, then save as a .png
 
 ##Necessary Packages (skip if already installed)
 
