@@ -1,5 +1,13 @@
 ###### Week 2 scripting assignment is done!
 ###### Week 3 plotting assignment is done!
+###### Week 4 tydr/dyplr assignments done!
+
+# *Week_04*
+
+Contained in this assignment repo is:
+
+-Classwork and homework scripts to learn tidyverse library functions
+  -Outputs of both classwork and homework graphs
 
 # *Week_03*
 
