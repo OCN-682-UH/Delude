@@ -1,6 +1,10 @@
 ###### Week 2 scripting assignment is done!
 ###### Week 3 plotting assignment is done!
 ###### Week 4 tydr/dyplr assignments done!
+###### Week 5 Join-date assignments done!
+###### Week 6 Quarto assignment done!
+  [This is the classwork link](https://01a0efa4-4ff6-0627-30fc-d605320b8a19.share.connect.posit.cloud/)
+  [This is the homework link]()
 
 # *Week_04*
 

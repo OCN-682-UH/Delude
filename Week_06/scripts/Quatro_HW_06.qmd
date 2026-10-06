@@ -1,14 +1,14 @@
 ---
-title: "Quatro_HW_06"
+title: "Quatro HW 06"
 author: "Mano'ike Delude"
-format: 
+format:
   html:
     code-fold: true
     code-summary: "Show code"
     theme: minty
 ---
 
-##Homework Week 06 (Quarto)
+## Homework Week 06 (Quarto)
 
 *Loading all my libraries*
 
@@ -24,9 +24,12 @@ library(gganimate)
 library(gifski) #needed to render gifs from gganimate
 ```
 
-##This is where data gets imported and cleaned \#####**Importing the week 6 dataset and reusing some of my date and join homework code to process it** I first import the .csv data as a new object in r to make downstream modifications easier. Next I use the *mutate()* and *select()* functions to modify the two dataframes to prepare for joining. Then I use *inner_join()* to combine the two dataframes and drop any entries that are missing data. Lastly I pivot the variables columns longer to allow for easier analysis of means and plotting.
+## This is where data gets imported and cleaned \
+##### **Importing the week 6 dataset and reusing some of my date and join homework code to process it** 
+I first import the .csv data as a new object in r to make downstream modifications easier. Next I use the *mutate()* and *select()* functions to modify the two dataframes to prepare for joining. Then I use *inner_join()* to combine the two dataframes and drop any entries that are missing data. Lastly I pivot the variables columns longer to allow for easier analysis of means and plotting.
 
 ```{r}
+#| eval: false
 #| message: false
 ##Data
   #read in the .csv for the data and depth
@@ -62,11 +65,16 @@ cond_depth_dat <- inner_join(cd,dd, by = "datetime") |>
 
 ```
 
-#This is where my table code goes We can see in @tbl-var-table the means and standard deviation of how the overall survey went.
+# This is where my table code goes 
+We can see in @tbl-var-table the means and standard deviation of how the overall survey went.
 
 ```{r}
-#| label: tbl-var-table
-#| tbl-cap: "Variable Means and Standard Deviation"
+#| eval: false
+# label: tbl-var-table # providing a label so we can cross-reference the table in-text
+# tbl-cap: "Variable Means and Standard Deviation" 
+
+#^removing these from shipment until the quarto the HTML issue is fixed. Going to hard-code in a new chunk
+
 # providing a label so we can cross-reference the table in-text
 
 table_dat <- inner_join(cd,dd, by = "datetime") |>
@@ -80,16 +88,38 @@ table_dat <- inner_join(cd,dd, by = "datetime") |>
   #group by the variables to show their means and standard deviation.
   summarize(table_means = mean(Values, na.rm=TRUE), 
             table_sd = sd(Values, na.rm=TRUE)) |>
-  kbl() #makes this into a Kable table
+  
+   kbl(table.attr = 'data-quarto-disable-processing="true"') #makes this into a Kable table, removes quarto's need to mess with it
+  #^This is still having trouble resolving with quarto and HTML so I'm just going to hard code it:
   
 ```
 
-###This is where my figure code goes \#####**WARNING:** do NOT run this code It will: -generate hundreds of frames -3 times -make your laptop's RAM really really sad!
+```{r}
+#| label: tbl-var-table
+#| tbl-cap: "Variable Means and Standard Deviation" 
+#| eval: false
+
+| Variable   |	Mean       | SD        |
+|:-----------|:-----------:|:---------:|
+|Depth	     |  0.3085941  | 0.0584341 |
+|Salinity    |	33.7107273 | 0.8534618 |
+|Temperature |	29.3774248 | 0.5254303 |
+
+#the hard-coded table also doesn't want to render so it's going to be turned off too
+
+```
+
+### This is where my figure code goes 
+##### **WARNING:** do NOT run this code 
+It will: 
+-generate hundreds of frames 
+-3 times 
+-make your laptop's RAM really really sad!
 
 Post this code chunk I will upload the gif which will make your computer have a much nicer time!
 
 ```{r}
-#| #eval: false
+#| eval: false
 # Keeps the wbesite from running the code, but allows you to still view it
 cond_depth_plot <- cond_depth_dat |>
   #plot a line graph of the difference variables over time
@@ -121,6 +151,6 @@ anim_save(here("Week_06", "output", "Ploting data collection by time and depth.g
 
 ```
 
-![Plot!](C:/Users/cesiu/Desktop/OCN682%20R/Classwork/Delude,%20R%20Classwork/Week_06/output/Ploting%20data%20collection%20by%20time%20and%20depth.gif)
+![Plot!](C:/Users/cesiu/Desktop/OCN682 R/Classwork/Delude, R Classwork/Week_06/output/Ploting data collection by time and depth.gif)
 
 While the data looks pretty and flashy, the free y-axis gives a false impression of the magnitude of variance in the dataset.
