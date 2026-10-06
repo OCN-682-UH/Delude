@@ -11,21 +11,21 @@ format:
 ##Homework Week 06 (Quarto)
 
 *Loading all my libraries*
+
 ```{r}
 #| warning: false
 #| message: false
-library(palmerpenguins)
 library(tidyverse)
 library(kableExtra)
-library(plotly)
+library(plotly) #tried to make an interactive plot version of this, but went a different way.
 library(here)
 library(lubridate)
 library(gganimate)
-library(gifski)
+library(gifski) #needed to render gifs from gganimate
 ```
 
-###This is where data gets imported and cleaned
-*Importing the maunalua chemical dataset and using my tydr homework code to process it*
+##This is where data gets imported and cleaned \#####**Importing the week 6 dataset and reusing some of my date and join homework code to process it** I first import the .csv data as a new object in r to make downstream modifications easier. Next I use the *mutate()* and *select()* functions to modify the two dataframes to prepare for joining. Then I use *inner_join()* to combine the two dataframes and drop any entries that are missing data. Lastly I pivot the variables columns longer to allow for easier analysis of means and plotting.
+
 ```{r}
 #| message: false
 ##Data
@@ -62,9 +62,13 @@ cond_depth_dat <- inner_join(cd,dd, by = "datetime") |>
 
 ```
 
-###This is where my table code goes
+#This is where my table code goes We can see in @tbl-var-table the means and standard deviation of how the overall survey went.
 
 ```{r}
+#| label: tbl-var-table
+#| tbl-cap: "Variable Means and Standard Deviation"
+# providing a label so we can cross-reference the table in-text
+
 table_dat <- inner_join(cd,dd, by = "datetime") |>
   select(-Serial) |> #This is the same number for everything, and is unnecessary for analysis
   mutate(datetime = round_date(datetime, "minute")) |>
@@ -73,41 +77,41 @@ table_dat <- inner_join(cd,dd, by = "datetime") |>
                values_to = "Values") |>
   drop_na() |> #drops NAs in any row
   group_by(Variables) |>
-  summarize(table_means = means(Values, na.rm=TRUE), 
+  #group by the variables to show their means and standard deviation.
+  summarize(table_means = mean(Values, na.rm=TRUE), 
             table_sd = sd(Values, na.rm=TRUE)) |>
-  kbl()
+  kbl() #makes this into a Kable table
   
 ```
 
+###This is where my figure code goes \#####**WARNING:** do NOT run this code It will: -generate hundreds of frames -3 times -make your laptop's RAM really really sad!
 
-###This is where my figure code goes
-#####**WARNING:** do NOT run this code
-It will:
--generate hundreds of frames
--3 times
--make your laptop's RAM really really sad!
+Post this code chunk I will upload the gif which will make your computer have a much nicer time!
 
-Post code I will upload the gif which will make your computer have a much nicer time!
 ```{r}
-#| eval: false
+#| #eval: false
+# Keeps the wbesite from running the code, but allows you to still view it
 cond_depth_plot <- cond_depth_dat |>
   #plot a line graph of the difference variables over time
   ggplot(aes( x = datetime,
               y = means_vals,
-              fill = Variables)) +
+              color = Variables)) +
   #makes a line series that doesn't stack values of the same date
   geom_line(stat = "identity",
            position = "dodge") +
   #splits the graph into 3 plots in one column (so it's easier to compart the timescale)
   geom_point() +
+  #adding this puts a visually satisfying dot on the end of the line reveal so it's easier to follow
   facet_wrap(~Variables,
              scales = "free_y",
              ncol = 1) +
   theme(legend.position = "none") +
   #remove legend, unnecessary with facet_wrap labels
-  labs(y = "Mean Values") +
+  labs(y = "Mean Values",
+       x = "Time") +
   #tidy up
   transition_reveal(datetime)
+  #reveals the plot point by point vs time!
 
 rendered_facet <- animate(cond_depth_plot, renderer = gifski_renderer())
 
@@ -116,6 +120,7 @@ anim_save(here("Week_06", "output", "Ploting data collection by time and depth.g
          )
 
 ```
-##Results
 
+![Plot!](C:/Users/cesiu/Desktop/OCN682%20R/Classwork/Delude,%20R%20Classwork/Week_06/output/Ploting%20data%20collection%20by%20time%20and%20depth.gif)
 
+While the data looks pretty and flashy, the free y-axis gives a false impression of the magnitude of variance in the dataset.
