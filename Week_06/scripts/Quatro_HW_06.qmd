@@ -1,0 +1,121 @@
+---
+title: "Quatro_HW_06"
+author: "Mano'ike Delude"
+format: 
+  html:
+    code-fold: true
+    code-summary: "Show code"
+    theme: minty
+---
+
+##Homework Week 06 (Quarto)
+
+*Loading all my libraries*
+```{r}
+#| warning: false
+#| message: false
+library(palmerpenguins)
+library(tidyverse)
+library(kableExtra)
+library(plotly)
+library(here)
+library(lubridate)
+library(gganimate)
+library(gifski)
+```
+
+###This is where data gets imported and cleaned
+*Importing the maunalua chemical dataset and using my tydr homework code to process it*
+```{r}
+#| message: false
+##Data
+  #read in the .csv for the data and depth
+cond_dat <- read_csv(here("Week_05", "data", "CondData.csv"))
+depth_dat <- read_csv(here("Week_05", "data", "DepthData.csv"))
+
+##Code
+
+  #adding a new column to the dataframes of the fixed (codable) dates as "datetime"
+cd <- cond_dat |>
+  #round to the nearest 10sec to match the seconds data in depth_dat
+  mutate(datetime = mdy_hms(date), datetime = round_date(datetime, "10 sec")) |>
+  select(-date) #drop the old date column
+dd <- depth_dat |>
+  mutate(datetime = ymd_hms(date)) |>
+  select(-date) #drop the old dates here too
+
+  #Joining the two dfs in a single one
+cond_depth_dat <- inner_join(cd,dd, by = "datetime") |>
+  select(-Serial) |> #This is the same number for everything, and is unnecessary for analysis
+  mutate(datetime = round_date(datetime, "minute")) |> #rounding all the dates to the nearest minute
+  #collapses the variables into longer table for easier analysis
+  pivot_longer(cols = c(Depth, Temperature, Salinity),
+               names_to = "Variables",
+               values_to = "Values") |>
+  drop_na() |> #drops NAs in any row
+  group_by(datetime, Variables) |> #sort the data by time recorded and variable
+  summarise(means_vals = mean(Values)) #average the values for each variable at every time interval
+
+#cond_depth_dat
+ #^left in for checking my work
+  
+
+```
+
+###This is where my table code goes
+
+```{r}
+table_dat <- inner_join(cd,dd, by = "datetime") |>
+  select(-Serial) |> #This is the same number for everything, and is unnecessary for analysis
+  mutate(datetime = round_date(datetime, "minute")) |>
+    pivot_longer(cols = c(Depth, Temperature, Salinity),
+               names_to = "Variables",
+               values_to = "Values") |>
+  drop_na() |> #drops NAs in any row
+  group_by(Variables) |>
+  summarize(table_means = means(Values, na.rm=TRUE), 
+            table_sd = sd(Values, na.rm=TRUE)) |>
+  kbl()
+  
+```
+
+
+###This is where my figure code goes
+#####**WARNING:** do NOT run this code
+It will:
+-generate hundreds of frames
+-3 times
+-make your laptop's RAM really really sad!
+
+Post code I will upload the gif which will make your computer have a much nicer time!
+```{r}
+#| eval: false
+cond_depth_plot <- cond_depth_dat |>
+  #plot a line graph of the difference variables over time
+  ggplot(aes( x = datetime,
+              y = means_vals,
+              fill = Variables)) +
+  #makes a line series that doesn't stack values of the same date
+  geom_line(stat = "identity",
+           position = "dodge") +
+  #splits the graph into 3 plots in one column (so it's easier to compart the timescale)
+  geom_point() +
+  facet_wrap(~Variables,
+             scales = "free_y",
+             ncol = 1) +
+  theme(legend.position = "none") +
+  #remove legend, unnecessary with facet_wrap labels
+  labs(y = "Mean Values") +
+  #tidy up
+  transition_reveal(datetime)
+
+rendered_facet <- animate(cond_depth_plot, renderer = gifski_renderer())
+
+anim_save(here("Week_06", "output", "Ploting data collection by time and depth.gif"),
+          animation = rendered_facet
+         )
+
+```
+##Results
+
+

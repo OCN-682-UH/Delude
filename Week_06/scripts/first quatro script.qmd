@@ -1,0 +1,19 @@
+---
+title: "Quarto Uno"
+author: "Mano'ike Delude"
+format: html
+---
+
+## My Document
+
+Loading all my libraries
+```{r}
+#| warning: false
+#| message: false
+library(palmerpenguins)
+library(tidyverse)
+```
+
+There are `r nrow(penguins)` individual penguin observations.
+
+The biggest penguin is `r max(penguins$body_mass_g, na.rm = TRUE)` grams, and the smallest is `r min(penguins$body_mass_g, na.rm = TRUE)` grams
