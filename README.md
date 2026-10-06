@@ -5,7 +5,7 @@
 ###### Week 6 Quarto assignment done!
   [This is the classwork link](https://01a0efa4-4ff6-0627-30fc-d605320b8a19.share.connect.posit.cloud/)
   [This is the homework link](https://01a11352-913f-5e98-36ae-18ef95df83be.share.connect.posit.cloud/)
-    please see homework folder for plot, I tried a bunch of things and I couldn't figure out how to get it to load on posit cloud
+    please see homework github output folder for plot, I tried a bunch of things and I couldn't figure out how to get it to load on posit cloud
 
 # *Week_04*
 
