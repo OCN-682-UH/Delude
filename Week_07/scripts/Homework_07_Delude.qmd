@@ -1,0 +1,115 @@
+---
+title: "Quatro HW 07"
+author: "Mano'ike Delude"
+format:
+  html:
+    code-fold: true
+    code-summary: "Show code"
+    theme: minty
+---
+
+## Homework Week 07 (Maps)
+
+*Loading libraries*
+
+```{r}
+#| warning: false
+#| messgae: false
+library(tidyverse)
+library(here)
+library(lubridate)
+library(tidytuesdayR)
+library(maps)
+library(mapdata)
+library(mapproj)
+library(plotly)
+```
+
+*Loading TidyTuesday Bigfoot data*
+
+```{r}
+#| message: false
+
+tuesdata <- tidytuesdayR::tt_load(2022, week = 37) 
+# ^ tidytuesday data requires you to load in both the dfs of the week
+# v and read in the dataset you're interested in
+bigfoot <- tuesdata$bigfoot
+```
+
+*Take a peek at the data*
+```{r}
+str(bigfoot)
+
+glimpse(bigfoot)
+```
+It seems like the only data we're gonna need are the county/state data. The lat/long/geohash columns contain a lot of NAs. A heatmap of the counties will cover more observations and still provide a "useful" visualization.
+
+### Building the maps() polygon
+```{r}
+state <- map_data("state")
+county <- map_data("county")
+```
+
+### Organizing Data
+```{r}
+#dropping entries we don't need for mapping
+small_bigfoot <- bigfoot |>
+  select(county, state, season) |>
+  #filtering out all the other columns we don't need
+  drop_na() |> #cleaning out NAs
+  filter(!grepl("Unknown", season)) |> #NAs in season are set as Unknown :eyeroll:
+  mutate(region = str_to_lower(state), #making all the state and county names lowercase
+         subregion = str_to_lower(county),
+         subregion = str_remove_all(subregion, "county"), #removing the extraneous "county" from the end of every entry
+         subregion = str_trim(subregion)) |> #gets rid of extra spaces
+  group_by(region, subregion, season) |> #grouping by the tidier columns
+  mutate(obs_count = n()) |> #get an obs count, our actual thing we're plotting by
+  select(-c(county, state)) #send old columns to the farm upstate
+```
+
+### Merging Tidy Data with Map Data
+```{r}
+#| messgae: false
+table_bigfoot <- small_bigfoot |> #Adding my data to the county data so it works with Maps
+  inner_join(county, relationship = "many-to-many") #the warning message said to this relationship part
+
+```
+
+
+### Plotting Data
+```{r}
+
+#In order for ggplotly() to work, we must first make a ggplot object
+plot_bigfoot <-  ggplot() +
+  
+    geom_polygon(data = state, #creating a base map so gaps in the bigfoot df aren't just nothing
+               aes(x = long, y = lat,
+                   group = group, #DON'T FORGET THIS
+                   fill = region),
+               color = "black",
+               fill = "navyblue",
+               alpha = 0.1) +
+  
+    geom_polygon(data = table_bigfoot, #plotting our mashed-up bigfoot and county map data
+               aes(x = long, y = lat,
+                   group = group, #ABSOLUTELY NO FORGETTING THIS
+                   fill = obs_count,
+                   frame = season), #this part doesn't load when making the object, but ggplotly will read it later
+                    ) +
+    theme_void() + #banish all axis labels and titles
+  
+    scale_fill_gradient(low = "bisque", high = "brown") +
+    labs(dictionary = c( #making a dictionary of terms that need to be modified
+      obs_count = "Sightings",
+      season = "Season",
+      region = "State",
+      subregion = "County"),
+         title = "Sasquatch Sightings Over Seasons")
+
+ggplotly(plot_bigfoot)
+    
+  
+
+
+```
+

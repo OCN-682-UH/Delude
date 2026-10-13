@@ -1,0 +1,108 @@
+library(tidyverse)
+library(here)
+library(maps)
+library(mapdata)
+library(mapproj)
+
+# Population in California by county
+popdata <- read_csv(here("Week_07", "data", "CApopdata.csv"))
+
+# Seastar counts at field sites in California
+stars <- read_csv(here("Week_07", "data", "stars.csv"))
+
+world <- map_data("world")
+
+head(world)
+
+usa <- map_data("usa")
+
+head(usa)
+
+italy <- map_data("italy")
+
+head(italy)
+
+states <- map_data("state")
+
+head(states)
+
+counties <- map_data("county")
+
+head(counties)
+
+ggplot() +
+  geom_polygon(data = world,
+               aes(x = long, y = lat,
+                   group = group,
+                   fill = region,
+                   ),
+               color = "black") +
+  theme_minimal() +
+  guides(fill = "none") +
+  theme(panel.background = element_rect(fill = "lightblue")) +
+  coord_map(projection = "sinusoidal",
+            xlim = c(-180, 180))
+
+CA_data <- states |>
+  filter(region == "california")
+
+CA_counties <- counties |>
+  filter(region == "california")
+
+ggplot() +
+  geom_polygon(data = CA_data,
+               aes(x = long, y = lat,
+                   group = group,
+                   fill = region),
+               color = "black") +
+  geom_polygon(data = CA_counties,
+               aes(x = long, y = lat,
+                   group = group,
+                   fill = subregion),
+               color = "black") +
+  guides(fill = "none") +
+  theme(panel.background = element_rect(fill = "linen")) +
+  coord_map()
+
+CA_data
+
+CApop_county <- popdata |>
+  select("subregion" = County, Population) |>   # rename to match counties
+  inner_join(counties) |>
+  filter(region == "california")                 # some county names repeat in other states
+
+head(CApop_county)
+
+ggplot() +
+  geom_polygon(data = CApop_county,
+               aes(x = long, y = lat,
+                   group = group,
+                   fill = Population),
+               color = "black") +
+  geom_point(data = stars,
+             aes(x = long,
+                 y = lat,
+                 size = star_no)) +
+  coord_map() +
+  theme_void() +
+  scale_fill_gradient(transform = "log10") +
+  labs(size = "# stars/m^2")
+
+ggsave(here("Week_07", "output", "Capop.pdf"))
+
+
+library(sf)
+library(rnaturalearth)
+library(rnaturalearthdata)
+
+world_sf <- ne_countries(scale = "medium",
+                         returnclass = "sf") #you need the returnclass to get send the output for geom_sf as an sf object
+
+ggplot(world_sf) +
+  geom_sf(fill = "lightgray",
+          color = "white") +
+  coord_sf(crs = "+proj=robin") + # Robinson projection
+  theme_void() +
+  labs(title = "Robinson Projection")
+
+
