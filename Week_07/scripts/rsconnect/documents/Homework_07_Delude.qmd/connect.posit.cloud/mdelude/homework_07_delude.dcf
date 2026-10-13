@@ -1,0 +1,12 @@
+name: homework_07_delude
+title: Homework_07_Delude
+username: mdelude
+account: mdelude
+server: connect.posit.cloud
+hostUrl: https://api.connect.posit.cloud/v1
+appId: 01a13379-eae0-fb92-8863-3ea991041d49
+bundleId:
+url: https://connect.posit.cloud/mdelude/content/01a13379-eae0-fb92-8863-3ea991041d49
+version: 1
+asMultiple: FALSE
+asStatic: TRUE
