@@ -10,6 +10,15 @@ format:
 
 ## Homework Week 07 (Maps)
 
+#### Purpose:
+This script is meant to:
+-Load all appropriate libraries
+-Load tidyTuesday's Bigfoot data
+-Load maps data for the contiguous US
+-Clean Bigfoot data
+-Merge Bigfoot and maps data
+-Plot an interactive plotly map of how Bigfeet are sighted through the seasons
+
 *Loading libraries*
 
 ```{r}
@@ -78,6 +87,8 @@ table_bigfoot <- small_bigfoot |> #Adding my data to the county data so it works
 
 ### Plotting Data
 ```{r}
+#| label: fig-foot-plot # providing a label so we can cross-reference the table in-text
+#| fig-cap: "Bigfoot Population Statistics" 
 
 #In order for ggplotly() to work, we must first make a ggplot object
 plot_bigfoot <-  ggplot() +
@@ -95,10 +106,11 @@ plot_bigfoot <-  ggplot() +
                    group = group, #ABSOLUTELY NO FORGETTING THIS
                    fill = obs_count,
                    frame = season), #this part doesn't load when making the object, but ggplotly will read it later
-                    ) +
+                   ) +
     theme_void() + #banish all axis labels and titles
   
-    scale_fill_gradient(low = "bisque", high = "brown") +
+    scale_fill_gradient(low = "bisque", high = "brown") + #adjust the legend fills to be more bigfoot-y
+  
     labs(dictionary = c( #making a dictionary of terms that need to be modified
       obs_count = "Sightings",
       season = "Season",
@@ -112,4 +124,14 @@ ggplotly(plot_bigfoot)
 
 
 ```
+
+As shown in @fig-foot-plot, we can see that Squatches are typically around the Pacific Northwest and Northern California. We hypothesize that they blend in with the local populace more easily in those regions. 
+
+## Saving my output
+```{r}
+#| eval: false
+
+ggsave(here("Week_07","output","bigfoot_map.png"), plot = plot_bigfoot, height = 7, width = 12)
+```
+
 
