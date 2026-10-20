@@ -11,13 +11,13 @@ format:
 ## Homework Week 07 (Maps)
 
 #### Purpose:
-This script is meant to:
--Load all appropriate libraries
--Load tidyTuesday's Bigfoot data
--Load maps data for the contiguous US
--Clean Bigfoot data
--Merge Bigfoot and maps data
--Plot an interactive plotly map of how Bigfeet are sighted through the seasons
+This script is meant to:  
+- Load all appropriate libraries  
+- Load tidyTuesday's Bigfoot data  
+- Load maps data for the contiguous US  
+- Clean Bigfoot data  
+- Merge Bigfoot and maps data  
+- Plot an interactive plotly map of how Bigfeet are sighted through the seasons  
 
 *Loading libraries*
 
