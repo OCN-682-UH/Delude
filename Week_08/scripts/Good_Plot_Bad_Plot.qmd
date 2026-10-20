@@ -1,14 +1,17 @@
 ---
 title: "Good Plot, Bad Plot"
-format: html
+author: "Mano'ike Delude"
+format:
+  html:
+    code-fold: true
+    code-summary: "Show code"
+    theme: minty
 ---
-
-#  Homework 08: Good plot Bad plot
-
 ###  The purpose of this script is to [good plot bad plot]
 
 ##  Libraries
 ```{r}
+#| message: false
 library(tidyverse)
 library(here)
 library(lubridate)
@@ -21,20 +24,215 @@ library(plotly)
 
 ##  Data
 ```{r}
+#| message: false
 tuesdata <- tidytuesdayR::tt_load(2026, week = 36)
 # ^ tidytuesday data requires you to load in both the dfs of the week
 # v and read in the dataset you're interested in
 cafe <- tuesdata$cafe
 # This dataset comes with a 2nd df indexing labor-hours
 cappuccino_index <- tuesdata$cappuccino_index
+
+#NZ and South Africa have spaces in their contry codes that mess up mapping data, so the TT post has this to clean it:
+cappuccino_index$country <- gsub("\u00a0", " ", cappuccino_index$country)
 ```
 
 *Taking a look at the data*
 ```{r}
+#| message: false
+#| eval: false
 str(cafe)
 str(cappuccino_index)
 
 glimpse(cafe)
 glimpse(cappuccino_index)
+```
+*Functions*
+```{r}
+#adding phycount() because it can be used for Countries and stuff too!
+phycount = function(data, taxa) { 
+  df <- data |>
+    select({{taxa}}) |>
+    drop_na() |>
+    group_by({{taxa}}) |>
+    summarize(member_count = n()) |>
+    arrange(desc(member_count))
+    return(df)
+}
+```
+
+__Bad plot functions__
+*This sets up the mask for where dots can live on the plot*
+```{r}
+#Found this silhoutteing plotting method from the TidyTuesday's frog data winner!
+
+#Uploaded	2022 Aug 23 by T. Michael Keesey
+#Coffea arabica
+silhouette <- png::readPNG(curl::curl_fetch_memory("https://images.phylopic.org/images/d792cf69-7fa9-4340-a8a4-20102b09ab25/raster/1086x1536.png?v=182ecbbb7bd")$content)
+coffee_mask <- silhouette[, , dim(silhouette)[3]] > 0.5
+
+city_ct <- phycount(cafe, city)
+#condenses counts down to not make tiny dots
+things_per_dot <- 1
+n_thing <- nrow(city_ct)
+n_dots <- ceiling(n_thing / things_per_dot)
+
+# Hexagonal grid of candidate dot positions, in pixel coordinates
+hex_grid <- function(spacing) {
+  expand_grid(i = 0:(nrow(coffee_mask) %/% (spacing * sqrt(3) / 2)), j = 0:(ncol(coffee_mask) %/% spacing)) |>
+    mutate(row = 1 + i * spacing * sqrt(3) / 2, x = 1 + j * spacing + ((i + 1) %% 2) * spacing / 2) |>
+    filter(row <= nrow(coffee_mask), x <= ncol(coffee_mask)) |>
+    filter(coffee_mask[cbind(round(row), round(x))]) |>
+    mutate(y = nrow(coffee_mask) - row)
+} #my brain is melted from the math parts of this
+
+#Making gaps in the spacing that allows all dots to be split nicely
+dot_spacing <- detect(seq(60, 10, by = -0.05), \(s) nrow(hex_grid(s)) >= n_dots)
+
+#Converts the detected spacing into a dataframe with all the plotting data for putting hexagonal dots through a mask layer
+dots <- hex_grid(dot_spacing) |>
+  mutate(neighbours = rowSums(as.matrix(dist(pick(x, y))) < dot_spacing * 1.1)) |>
+  slice_max(neighbours, n = n_dots, with_ties = FALSE) |>
+  arrange(x, y)
+
+#We have to add our city names back into the df, otherwise we're gonna have loose points with nothing in them!
+cafe_dots <- dots |>
+  mutate(city = city_ct$city[seq(1, n_thing, by = things_per_dot)])
+  
+
+```
+*Plotting*
+```{r}
+for_plotly <- ggplot() +
+  geom_point(data = cafe_dots, aes(x, y, color = city), size = dot_spacing * 0.08, stroke = 0) +
+  #using our point data to lock the x and y coordinates, our only real variable is city.
+  scale_y_continuous(expand = expansion(mult = c(0.1, 0.01))) +
+  coord_fixed(clip = "off") +
+  #stuff to make the image behave
+  guides(color = "none") +
+  theme_void() +
+    theme(
+    legend.position = "none",
+    plot.title.position = "plot",
+    plot.background = element_rect(fill = "black", color = NA))
+  #makes the plot dark and empty, like a Hot Topic employee
+  
+#Absuing ggplotly once more to make something illegible have some plausible readability
+plot <- ggplotly(for_plotly) |>
+  layout(plot_bgcolor = "black",
+         paper_bgcolor = "black")
+  #ggplotly tries to escape the darkness inside, but luckily I've got a new bottle of mascara and black nail polish
+
+plot #naming it something super generic in code, because why think so hard! There's no way this can backfire!
+```
+Now **this** is vile!  \
+\
+The colors represent the distribution of cities in this study about coffee shops. Lovingly plotted against the silhouette of a coffee branch!
+\
+Some massive rules broken:
+
+- Data is organized by biggest city on the left (which is extra hard to tell with the leaf structures and a crazy grid)
+- The color scaling is so janky when you go between the cities with similar counts and ones that have 1 entry
+- Black background + awful colors make this look like a Lite-Brite, to appeal to 80s kids
+- No axis, no title, no info on what this even is
+- You can see which cities are in the study simply by mousing over! Why not find your favorite one while this is on a monitor at a conference? I'm sure it'll be easy, and not at all infuriating
+- You get a useless x and y axis value when you mouse over, just so you know where on this plot your city is! (Share with your colleges!)
+
+__Good Plot__
+*Wrangling data, loading maps*
+```{r}
+world <- map_data("world") #loading in world map data
+
+#Making a usful plot of the cappuccino_index by country, so we can see the disparity between labor value and coffee value, first we have to combine the map data with the cappuccino index.
+cap_in <- cappuccino_index #I already misspelled cappuccino 5 times making this, no longer!
+
+world_cap <- cap_in |>
+  select("region" = country, index, index_as_time) |> #changinges "country" to match the mapping df's "region"
+  inner_join(world)
+```
+*Plotting*
+```{r}
+cap_print <- ggplot() +
+    geom_polygon(data = world,
+               aes(x = long, y = lat,
+                   group = group,
+                   ), fill = "white") +
+    guides(fill = "none") +
+    geom_polygon(data = world_cap,
+               aes(x = long, y = lat,
+                   group = group,
+                   fill = log(index), #Have to transform the data to really see differences, otherwise the India/Pakistan region outweighs the data.
+                   text = paste0(region, 
+                                      "<br>", index_as_time)),
+               color = "black", linewidth = 0.1) +
+  theme_void() +
+  scale_fill_gradient(low = "lightgreen", high = "maroon") +
+  coord_map(projection = "mercator",
+            xlim = c(-180, 180)) +
+  #coord_fixed(1.25) +
+  theme(panel.background = element_rect(fill = "lightblue")) +
+  labs(title = "Cappuchino Index",
+       subtitle = "Heatmap of Barista labor:product disparity",
+       caption = "From James Hoffman, data curated by Filip Reierson",
+       #fill = "Capp price / Barista Wage"
+       )
+#annoyingly, plotly doesn't read Labs so I have to make my own
+cap_print
+#going to post the original plot as well
+
+#ggsave(here("Week_08", "output", "Cupp_index_map.png"))
+```
+Much nicer!  \
+\
+This Good Plot logartythmically transforms the data so it's easier to see the smaller differences, as well as color coordinating what's ultimately an inference of work-life standards, but also inequality across the globe.  \
+\
+It's interesting to see that the countries that produce the most coffee beans have a worse labor:cup rating than ones that roast beans and produce value-added products.
+
+
+
+
+*Making on online widget to visualize the data better*
+```{r}
+
+#in order to try fixing the plotly image, it's better to re-make the ggplot
+
+cap_ly <- ggplot() +
+    geom_polygon(data = world,
+               aes(x = long, y = lat,
+                   group = group,
+                   ), fill = "gray") +
+    guides(fill = "none") +
+    geom_polygon(data = world_cap,
+               aes(x = long, y = lat,
+                   group = group,
+                   fill = log(index), #Have to transform the data to really see differences, otherwise the India/Pakistan region outweighs the data.
+                   text = paste0(region, 
+                                      "<br>", index_as_time)),
+               color = "black", linewidth = 0.1) +
+  theme_void() +
+  scale_fill_gradient(low = "lightgreen", high = "maroon") +
+  #coord_map(projection = "mercator",
+           # xlim = c(-180, 180)) +
+  coord_fixed(1.25) + #This is better for making the widget than coor_map, yet not perfect
+  theme(panel.background = element_rect(fill = "lightblue")) +
+  labs(title = "Cappuchino Index",
+       subtitle = "Labor hours it takes for a barista to pay for one cappuchino in their own country",
+       caption = "From James Hoffman, data curated by Filip Reierson")
+#annoyingly, plotly doesn't read Labs so I have to make my own
+
+cap_interactive <- ggplotly(cap_ly, tooltip = "text") |>
+  layout(
+    title = list(
+      text = paste0(
+        "Cappuchino Index", 
+        "<br>", 
+        "<sup>Labor hours it takes for a barista to pay for one cappuchino in their own country</sup>")),
+    margin = list(b=80) #stackoverflow said this could help, but I can't tell if it does anything
+  )
+```
+
+```{r}
+plot
+cap_print
+cap_interactive
 ```
 

@@ -1,0 +1,12 @@
+name: good_plot_bad_plot
+title: Good_Plot_Bad_Plot
+username: mdelude
+account: mdelude
+server: connect.posit.cloud
+hostUrl: https://api.connect.posit.cloud/v1
+appId: 01a15b61-8da5-b688-eccf-973b582345e2
+bundleId:
+url: https://connect.posit.cloud/mdelude/content/01a15b61-8da5-b688-eccf-973b582345e2
+version: 1
+asMultiple: FALSE
+asStatic: TRUE

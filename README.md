@@ -10,7 +10,8 @@
   [This is the homework link](https://01a13379-eae0-fb92-8863-3ea991041d49.share.connect.posit.cloud/)
 ###### Week 8 functions assignment done!
   [This is the homework link](https://01a15784-dee6-bcf8-c35e-01f4c254e17f.share.connect.posit.cloud/)
-###### Good plot bad plot not done yet!
+###### Good plot bad plot done!
+  [This is the good plot bad plot](https://01a15b61-8da5-b688-eccf-973b582345e2.share.connect.posit.cloud/)
   
 # *Week_04*
 
