@@ -8,6 +8,9 @@
     please see homework github output folder for plot, I tried a bunch of things and I couldn't figure out how to get it to load on posit cloud
 ###### Week 7 Maps assignment done!
   [This is the homework link](https://01a13379-eae0-fb92-8863-3ea991041d49.share.connect.posit.cloud/)
+###### Week 8 functions assignment done!
+  [This is the homework link](https://01a15784-dee6-bcf8-c35e-01f4c254e17f.share.connect.posit.cloud/)
+###### Good plot bad plot not done yet!
   
 # *Week_04*
 
