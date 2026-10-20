@@ -7,7 +7,7 @@ format:
     code-summary: "Show code"
     theme: minty
 ---
-###  The purpose of this script is to [good plot bad plot]
+#  The purpose of this script is to explore complex plotting ideas by making some absolutely horrid figures, then making a more acceptable one.
 
 ##  Libraries
 ```{r}
