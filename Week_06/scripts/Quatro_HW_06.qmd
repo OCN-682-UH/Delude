@@ -13,8 +13,7 @@ format:
 *Loading all my libraries*
 
 ```{r}
-#| warning: false
-#| message: false
+
 library(tidyverse)
 library(kableExtra)
 library(plotly) #tried to make an interactive plot version of this, but went a different way.
@@ -24,12 +23,11 @@ library(gganimate)
 library(gifski) #needed to render gifs from gganimate
 ```
 
-## This is where data gets imported and cleaned \
+## This is where data gets imported and cleaned 
 ##### **Importing the week 6 dataset and reusing some of my date and join homework code to process it** 
 I first import the .csv data as a new object in r to make downstream modifications easier. Next I use the *mutate()* and *select()* functions to modify the two dataframes to prepare for joining. Then I use *inner_join()* to combine the two dataframes and drop any entries that are missing data. Lastly I pivot the variables columns longer to allow for easier analysis of means and plotting.
 
 ```{r}
-#| eval: false
 #| message: false
 ##Data
   #read in the .csv for the data and depth
@@ -69,9 +67,9 @@ cond_depth_dat <- inner_join(cd,dd, by = "datetime") |>
 We can see in @tbl-var-table the means and standard deviation of how the overall survey went.
 
 ```{r}
-#| eval: false
-# label: tbl-var-table # providing a label so we can cross-reference the table in-text
-# tbl-cap: "Variable Means and Standard Deviation" 
+
+#| label: tbl-var-table # providing a label so we can cross-reference the table in-text
+#| tbl-cap: "Variable Means and Standard Deviation" 
 
 #^removing these from shipment until the quarto the HTML issue is fixed. Going to hard-code in a new chunk
 
@@ -94,10 +92,8 @@ table_dat <- inner_join(cd,dd, by = "datetime") |>
   
 ```
 
-```{r}
-#| label: tbl-var-table
-#| tbl-cap: "Variable Means and Standard Deviation" 
-#| eval: false
+
+
 
 | Variable   |	Mean       | SD        |
 |:-----------|:-----------:|:---------:|
@@ -107,7 +103,6 @@ table_dat <- inner_join(cd,dd, by = "datetime") |>
 
 #the hard-coded table also doesn't want to render so it's going to be turned off too
 
-```
 
 ### This is where my figure code goes 
 ##### **WARNING:** do NOT run this code 

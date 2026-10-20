@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Mano’ike Delude">
+
+<title>Functions Homework</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="Functions_HW_files/libs/clipboard/clipboard.min.js"></script>
+<script src="Functions_HW_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="Functions_HW_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="Functions_HW_files/libs/quarto-html/popper.min.js"></script>
+<script src="Functions_HW_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="Functions_HW_files/libs/quarto-html/anchor.min.js"></script>
+<link href="Functions_HW_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="Functions_HW_files/libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="Functions_HW_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="Functions_HW_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="Functions_HW_files/libs/bootstrap/bootstrap-4fab7da059a6feec3e3641fb57eee7e2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="Functions_HW_files/libs/htmltools-fill-0.5.9/fill.css" rel="stylesheet">
+
+<script src="Functions_HW_files/libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+
+<script src="Functions_HW_files/libs/plotly-binding-4.12.1/plotly.js"></script>
+
+<script src="Functions_HW_files/libs/typedarray-0.1/typedarray.min.js"></script>
+
+<script src="Functions_HW_files/libs/jquery-3.5.1/jquery.min.js"></script>
+
+<link href="Functions_HW_files/libs/crosstalk-1.2.2/css/crosstalk.min.css" rel="stylesheet">
+
+<script src="Functions_HW_files/libs/crosstalk-1.2.2/js/crosstalk.min.js"></script>
+
+<link href="Functions_HW_files/libs/plotly-htmlwidgets-css-2.25.2/plotly-htmlwidgets.css" rel="stylesheet">
+
+<script src="Functions_HW_files/libs/plotly-main-2.25.2/plotly-latest.min.js"></script>
+
+
+
+</head>
+
+<body class="fullcontent quarto-light">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Functions Homework</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Mano’ike Delude </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="homework-08-functions" class="level1">
+<h1>Homework 08: Functions</h1>
+<section id="the-purpose-of-this-script-is-to" class="level3">
+<h3 class="anchored" data-anchor-id="the-purpose-of-this-script-is-to">The purpose of this script is to</h3>
+<ul>
+<li>Make a function that helps plotting</li>
+<li>Make a function that helps tidy data</li>
+</ul>
+</section>
+<section id="functions" class="level3">
+<h3 class="anchored" data-anchor-id="functions">Functions</h3>
+<ul>
+<li>phycount(data, column) Returns a dataframe of your column, and its group count</li>
+<li>taxonplot(data, column) Returns a plotly widget bar graph of said group count</li>
+</ul>
+</section>
+<section id="libraries" class="level2">
+<h2 class="anchored" data-anchor-id="libraries">Libraries</h2>
+<div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidytuesdayR)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(plotly)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+</section>
+<section id="data" class="level2">
+<h2 class="anchored" data-anchor-id="data">Data</h2>
+<div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>tuesdata <span class="ot">&lt;-</span> tidytuesdayR<span class="sc">::</span><span class="fu">tt_load</span>(<span class="dv">2026</span>, <span class="at">week =</span> <span class="dv">41</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>---- Compiling #TidyTuesday Information for 2026-10-13 ----
+--- There is 1 file available ---
+
+
+── Downloading files ───────────────────────────────────────────────────────────
+
+  1 of 1: "frogs_and_toads_amphibiaweb.csv"</code></pre>
+</div>
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ^ tidytuesday data requires you to load in both the dfs of the week</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># v and read in the dataset you're interested in</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>frogs_and_toads_amphibiaweb <span class="ot">&lt;-</span> tuesdata<span class="sc">$</span>frogs_and_toads_amphibiaweb</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<p><em>Taking a look at the data</em></p>
+<div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(frogs_and_toads_amphibiaweb)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>spc_tbl_ [8,018 × 26] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
+ $ amphib_id         : num [1:8018] 9352 5082 8687 6561 441 ...
+ $ clade             : chr [1:8018] NA NA NA NA ...
+ $ comments          : chr [1:8018] NA NA "&lt;i&gt;Abavorana nazgul&lt;/i&gt; belongs to the family Ranidae. It was previously thought to be a highland melanistic fo"| __truncated__ "Genetic analysis (using mitochondrial 16S RNA) points to differences between &lt;i&gt;A. sonjae&lt;/i&gt; and &lt;i&gt;A. spinosu"| __truncated__ ...
+ $ common_name       : chr [1:8018] "Decorated Mahogany Frog" NA "Gunung Jerai Black Stream-Frog" "Sonja's Spiny Frog" ...
+ $ description       : chr [1:8018] NA NA "&lt;i&gt;Abavorana nazgul&lt;/i&gt; is a medium-sized, robust frog with an adult male snout-vent length range of 42.1 - 50."| __truncated__ "A West African species of &lt;i&gt;Acanthixalus&lt;/i&gt; frogs, morphologically similar to the only other known member of "| __truncated__ ...
+ $ distribution      : chr [1:8018] NA NA "&lt;i&gt;Abavorana nazgul&lt;/i&gt; is only known from the mountain, Gunung Jerai, in the state of Kedah on the west coast "| __truncated__ "This species is known from a few localities in southwestern Côte d'Ivoire, near the type locality in Taï Nation"| __truncated__ ...
+ $ edit_date         : Date[1:8018], format: NA NA ...
+ $ editedby          : chr [1:8018] NA NA "Ann T. Chang, Michelle S. Koo" "Kellie Whittaker, Michelle S. Koo" ...
+ $ family            : chr [1:8018] "Ranidae" "Ranidae" "Ranidae" "Hyperoliidae" ...
+ $ genus             : chr [1:8018] "Abavorana" "Abavorana" "Abavorana" "Acanthixalus" ...
+ $ interntnl_status  : logi [1:8018] NA NA NA NA NA NA ...
+ $ intro_isocc       : chr [1:8018] NA NA NA NA ...
+ $ isocc             : chr [1:8018] "ID,MY" "MY,ID" "MY" "CI,GH" ...
+ $ lannoo            : chr [1:8018] NA NA NA NA ...
+ $ larva             : chr [1:8018] NA NA NA "Tadpoles first orient horizontally within the egg, changing to a head-up vertical position as development progr"| __truncated__ ...
+ $ life_history      : chr [1:8018] NA NA "&lt;i&gt;Abavorana nazgul&lt;/i&gt; can be found in riparian habitats, in the vicinity of streams. At night, it hides in th"| __truncated__ "&lt;i&gt;Acanthixalus sonjae&lt;/i&gt; lives and breeds in water-filled cavities of trees, like &lt;i&gt;A. spinosus&lt;/i&gt; (Rödel e"| __truncated__ ...
+ $ national_status   : chr [1:8018] NA NA NA NA ...
+ $ ordr              : chr [1:8018] "Anura" "Anura" "Anura" "Anura" ...
+ $ refs              : chr [1:8018] NA NA "&lt;p&gt;" "&lt;p&gt;" ...
+ $ regional_status   : chr [1:8018] NA NA NA NA ...
+ $ relation_to_humans: chr [1:8018] NA NA NA NA ...
+ $ specificepithet   : chr [1:8018] "decorata" "luctuosa" "nazgul" "sonjae" ...
+ $ subfamily         : chr [1:8018] NA NA NA NA ...
+ $ submit_date       : Date[1:8018], format: NA NA ...
+ $ submittedby       : chr [1:8018] NA NA "Zheng Oong" "Kellie Whittaker and Arne Schiøtz" ...
+ $ trends_and_threats: chr [1:8018] NA NA NA "It occurs within several protected areas.  In Côte d'Ivoire: Taï National Park (Rödel et al. 2003), Haute Dodo "| __truncated__ ...
+ - attr(*, "spec")=
+  .. cols(
+  ..   amphib_id = col_double(),
+  ..   clade = col_character(),
+  ..   comments = col_character(),
+  ..   common_name = col_character(),
+  ..   description = col_character(),
+  ..   distribution = col_character(),
+  ..   edit_date = col_date(format = ""),
+  ..   editedby = col_character(),
+  ..   family = col_character(),
+  ..   genus = col_character(),
+  ..   interntnl_status = col_logical(),
+  ..   intro_isocc = col_character(),
+  ..   isocc = col_character(),
+  ..   lannoo = col_character(),
+  ..   larva = col_character(),
+  ..   life_history = col_character(),
+  ..   national_status = col_character(),
+  ..   ordr = col_character(),
+  ..   refs = col_character(),
+  ..   regional_status = col_character(),
+  ..   relation_to_humans = col_character(),
+  ..   specificepithet = col_character(),
+  ..   subfamily = col_character(),
+  ..   submit_date = col_date(format = ""),
+  ..   submittedby = col_character(),
+  ..   trends_and_threats = col_character()
+  .. )
+ - attr(*, "problems")=&lt;pointer: 0x000001ba584c9f50&gt; </code></pre>
+</div>
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(frogs_and_toads_amphibiaweb)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 8,018
+Columns: 26
+$ amphib_id          &lt;dbl&gt; 9352, 5082, 8687, 6561, 441, 7142, 670, 671, 2089, …
+$ clade              &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…
+$ comments           &lt;chr&gt; NA, NA, "&lt;i&gt;Abavorana nazgul&lt;/i&gt; belongs to the fam…
+$ common_name        &lt;chr&gt; "Decorated Mahogany Frog", NA, "Gunung Jerai Black …
+$ description        &lt;chr&gt; NA, NA, "&lt;i&gt;Abavorana nazgul&lt;/i&gt; is a medium-sized,…
+$ distribution       &lt;chr&gt; NA, NA, "&lt;i&gt;Abavorana nazgul&lt;/i&gt; is only known from…
+$ edit_date          &lt;date&gt; NA, NA, 2026-07-26, 2022-10-09, 2022-10-09, 2022-0…
+$ editedby           &lt;chr&gt; NA, NA, "Ann T. Chang, Michelle S. Koo", "Kellie Wh…
+$ family             &lt;chr&gt; "Ranidae", "Ranidae", "Ranidae", "Hyperoliidae", "H…
+$ genus              &lt;chr&gt; "Abavorana", "Abavorana", "Abavorana", "Acanthixalu…
+$ interntnl_status   &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…
+$ intro_isocc        &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…
+$ isocc              &lt;chr&gt; "ID,MY", "MY,ID", "MY", "CI,GH", "CM,CD,GA,NG", "CA…
+$ lannoo             &lt;chr&gt; NA, NA, NA, NA, NA, NA, "&lt;table style=\"background-…
+$ larva              &lt;chr&gt; NA, NA, NA, "Tadpoles first orient horizontally wit…
+$ life_history       &lt;chr&gt; NA, NA, "&lt;i&gt;Abavorana nazgul&lt;/i&gt; can be found in ri…
+$ national_status    &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, "None", NA, NA, NA, NA,…
+$ ordr               &lt;chr&gt; "Anura", "Anura", "Anura", "Anura", "Anura", "Anura…
+$ refs               &lt;chr&gt; NA, NA, "&lt;p&gt;", "&lt;p&gt;", "&lt;p&gt;", "&lt;p&gt;", "&lt;p&gt;", "&lt;p&gt;", N…
+$ regional_status    &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, "None", NA, NA, NA, NA,…
+$ relation_to_humans &lt;chr&gt; NA, NA, NA, NA, NA, "Blanchard's Cricket Frog (&lt;i&gt;A…
+$ specificepithet    &lt;chr&gt; "decorata", "luctuosa", "nazgul", "sonjae", "spinos…
+$ subfamily          &lt;chr&gt; NA, NA, NA, NA, NA, "Hylinae", "Hylinae", "Hylinae"…
+$ submit_date        &lt;date&gt; NA, NA, 2018-06-20, 2008-08-21, 2000-12-25, 2008-0…
+$ submittedby        &lt;chr&gt; NA, NA, "Zheng Oong", "Kellie Whittaker and Arne Sc…
+$ trends_and_threats &lt;chr&gt; NA, NA, NA, "It occurs within several protected are…</code></pre>
+</div>
+</div>
+<p>Lots of NAs here, I’m going to plot counts of families</p>
+<p><em>Building a function to easliy count and sort taxonomic observations, returning the resulting dataframe</em></p>
+<div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">#making a function that extracts a count of a certain subset of taxonomic data</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co">#data = your original data frame, x = the taxonomic observation &lt;chr&gt;</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>phycount <span class="ot">=</span> <span class="cf">function</span>(data, taxa) { </span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  df <span class="ot">&lt;-</span> data <span class="sc">|&gt;</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>({{taxa}}) <span class="sc">|&gt;</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">drop_na</span>() <span class="sc">|&gt;</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>({{taxa}}) <span class="sc">|&gt;</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarize</span>(<span class="at">member_count =</span> <span class="fu">n</span>()) <span class="sc">|&gt;</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">arrange</span>(<span class="fu">desc</span>(member_count))</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(df)</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<p>Hooray! Lets see if it works!</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">phycount</span>(frogs_and_toads_amphibiaweb, specificepithet) <span class="co">#Species~ish</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6,364 × 2
+   specificepithet member_count
+   &lt;chr&gt;                  &lt;int&gt;
+ 1 occidentalis              17
+ 2 boulengeri                15
+ 3 parkeri                   14
+ 4 montanus                  12
+ 5 guentheri                 11
+ 6 viridis                   11
+ 7 bicolor                   10
+ 8 minutus                   10
+ 9 australis                  9
+10 elegans                    9
+# ℹ 6,354 more rows</code></pre>
+</div>
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">phycount</span>(frogs_and_toads_amphibiaweb, genus) <span class="co">#genus</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 504 × 2
+   genus             member_count
+   &lt;chr&gt;                    &lt;int&gt;
+ 1 Pristimantis               631
+ 2 Eleutherodactylus          210
+ 3 Hyperolius                 155
+ 4 Craugastor                 126
+ 5 Scinax                     126
+ 6 Leptobrachella             115
+ 7 Dendropsophus              111
+ 8 Rana                       106
+ 9 Atelopus                   105
+10 Limnonectes                105
+# ℹ 494 more rows</code></pre>
+</div>
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">phycount</span>(frogs_and_toads_amphibiaweb, family) <span class="co">#family</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 57 × 2
+   family          member_count
+   &lt;chr&gt;                  &lt;int&gt;
+ 1 Hylidae                 1086
+ 2 Strabomantidae           840
+ 3 Microhylidae             768
+ 4 Bufonidae                666
+ 5 Ranidae                  470
+ 6 Rhacophoridae            467
+ 7 Megophryidae             369
+ 8 Mantellidae              300
+ 9 Dicroglossidae           265
+10 Leptodactylidae          246
+# ℹ 47 more rows</code></pre>
+</div>
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">phycount</span>(frogs_and_toads_amphibiaweb, subfamily) <span class="co">#subfamily, which in this case is bigger than family</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 51 × 2
+   subfamily           member_count
+   &lt;chr&gt;                      &lt;int&gt;
+ 1 Hylinae                      758
+ 2 Rhacophorinae                460
+ 3 Asterophryinae               370
+ 4 Dicroglossinae               244
+ 5 Pelodryadinae                243
+ 6 Eleutherodactylinae          227
+ 7 Leptobrachiinae              214
+ 8 Mantellinae                  205
+ 9 Megophryinae                 155
+10 Centroleninae                133
+# ℹ 41 more rows</code></pre>
+</div>
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">phycount</span>(frogs_and_toads_amphibiaweb, ordr) <span class="co">#order, which I guess they named that way because calling things "order" in your df would lead to some nightmare headaches. Definitely stealing this tip.</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 2
+  ordr  member_count
+  &lt;chr&gt;        &lt;int&gt;
+1 Anura         8018</code></pre>
+</div>
+</div>
+<p>It does!!!!</p>
+<p>phycount() will be more useful than glimpse() or head() for a quick view of taxonomic diversity at any level. For me, it’ll be useful as a method to ideate which level (species, family, subfamily, order) to use for plotting!</p>
+<p>Plus, I avoid 7 lines of code for each taxonomic level :p</p>
+<p><em>Plotting functions</em></p>
+<div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>taxonplot <span class="ot">=</span> <span class="cf">function</span>(df, taxa) {</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  to_ggplot <span class="ot">&lt;-</span> <span class="fu">phycount</span>(df, {{taxa}})</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>                <span class="co">#Nested function finally works!!! Hooray!!</span></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>  to_plotly <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> to_ggplot, <span class="fu">aes</span>(</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>          <span class="at">x =</span> {{taxa}},</span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>          <span class="at">y =</span> member_count,</span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">fill =</span> {{taxa}})) <span class="sc">+</span></span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>      <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>      <span class="fu">theme</span>( </span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a>            <span class="at">axis.text.x =</span> <span class="fu">element_blank</span>()) <span class="sc">+</span></span>
+<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a>      <span class="co">#guides(fill = "none") +</span></span>
+<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a>      <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Member Count"</span>,</span>
+<span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a>           )</span>
+<span id="cb20-16"><a href="#cb20-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-17"><a href="#cb20-17" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplotly</span>(to_plotly)</span>
+<span id="cb20-18"><a href="#cb20-18" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb20-19"><a href="#cb20-19" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<p>taxonplot() will quickly visualize the disparity in observations based on the taxonomic level you throw to it.</p>
+<p>Extra useful that it reads the same variables as phycount() so if you know one you can do the other.</p>
+<p><em>The scratch-paper work is in this chunk</em></p>
+<div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co">#plot_dat &lt;- phycount(frogs_and_toads_amphibiaweb, subfamily)</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">#^Testing set for building the function</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="co">#unfortunately I remembered that plotly is so finicky about data frames and can't handle something changing in the middle of a function. So I'm building it with ggplotly</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>to_plotly <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> plot_dat, <span class="fu">aes</span>(</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>          <span class="at">x =</span> subfamily,</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>          <span class="at">y =</span> member_count,</span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">fill =</span> subfamily)) <span class="sc">+</span></span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>      <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>      <span class="fu">theme</span>( </span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>            <span class="at">axis.text.x =</span> <span class="fu">element_blank</span>()) <span class="sc">+</span></span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>      <span class="co">#guides(fill = "none") +</span></span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>  <span class="co">#^Can't decide if the legend is good or not, it's nice for HTML since you can click and highlight the groups you're interested in</span></span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>      <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Member Count"</span>,</span>
+<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>           )</span>
+<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplotly</span>(to_plotly)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<p><em>The taxonplot() function in use</em></p>
+<div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co">#phydf &lt;- phycount(frogs_and_toads_amphibiaweb, subfamily)</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">#^Unnecessarry now that the function... functions!</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>  <span class="co">#VThis one is commented out because it takes too long to make, and a &gt;6k bar graph has no use to us</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="co">#taxonplot(frogs_and_toads_amphibiaweb, specificepithet)</span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="fu">taxonplot</span>(frogs_and_toads_amphibiaweb, subfamily)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div class="plotly html-widget html-fill-item" id="htmlwidget-e792ec616d587f6ede6e" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-e792ec616d587f6ede6e">{"x":{"data":[{"orientation":"v","width":0.89999999999999991,"base":0,"x":[1],"y":[1],"text":"subfamily: Adelastinae<br />member_count:   1<br />subfamily: Adelastinae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(248,118,109,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Adelastinae","legendgroup":"Adelastinae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.90000000000000013,"base":0,"x":[2],"y":[7],"text":"subfamily: Alcalinae<br />member_count:   7<br />subfamily: Alcalinae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(243,123,89,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Alcalinae","legendgroup":"Alcalinae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.90000000000000036,"base":0,"x":[3],"y":[72],"text":"subfamily: Allobatinae<br />member_count:  72<br />subfamily: Allobatinae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(238,128,66,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Allobatinae","legendgroup":"Allobatinae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.90000000000000036,"base":0,"x":[4],"y":[6],"text":"subfamily: Alytinae<br />member_count:   6<br />subfamily: Alytinae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(231,133,30,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Alytinae","legendgroup":"Alytinae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.90000000000000036,"base":0,"x":[5],"y":[34],"text":"subfamily: Anomaloglossinae<br />member_count:  34<br />subfamily: Anomaloglossinae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(224,138,0,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Anomaloglossinae","legendgroup":"Anomaloglossinae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.90000000000000036,"base":0,"x":[6],"y":[40],"text":"subfamily: Aromobatinae<br />member_count:  40<br />subfamily: Aromobatinae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(217,143,0,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Aromobatinae","legendgroup":"Aromobatinae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.90000000000000036,"base":0,"x":[7],"y":[370],"text":"subfamily: Asterophryinae<br />member_count: 370<br />subfamily: Asterophryinae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(208,148,0,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Asterophryinae","legendgroup":"Asterophryinae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.89999999999999947,"base":0,"x":[8],"y":[1],"text":"subfamily: Astrobatrachinae<br />member_count:   1<br />subfamily: Astrobatrachinae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(199,152,0,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Astrobatrachinae","legendgroup":"Astrobatrachinae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.89999999999999858,"base":0,"x":[9],"y":[88],"text":"subfamily: Boophinae<br />member_count:  88<br />subfamily: Boophinae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(189,157,0,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Boophinae","legendgroup":"Boophinae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.89999999999999858,"base":0,"x":[10],"y":[6],"text":"subfamily: Buergeriinae<br />member_count:   6<br />subfamily: Buergeriinae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(178,161,0,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Buergeriinae","legendgroup":"Buergeriinae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.89999999999999858,"base":0,"x":[11],"y":[83],"text":"subfamily: Cacosterninae<br />member_count:  83<br />subfamily: Cacosterninae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(165,165,0,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Cacosterninae","legendgroup":"Cacosterninae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.89999999999999858,"base":0,"x":[12],"y":[133],"text":"subfamily: Centroleninae<br />member_count: 133<br />subfamily: Centroleninae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(152,168,0,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Centroleninae","legendgroup":"Centroleninae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.89999999999999858,"base":0,"x":[13],"y":[90],"text":"subfamily: Ceratobatrachinae<br />member_count:  90<br />subfamily: Ceratobatrachinae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(137,172,0,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Ceratobatrachinae","legendgroup":"Ceratobatrachinae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.89999999999999858,"base":0,"x":[14],"y":[74],"text":"subfamily: Colostethinae<br />member_count:  74<br />subfamily: Colostethinae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(119,175,0,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Colostethinae","legendgroup":"Colostethinae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.89999999999999858,"base":0,"x":[15],"y":[119],"text":"subfamily: Cophylinae<br />member_count: 119<br />subfamily: Cophylinae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(98,178,0,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Cophylinae","legendgroup":"Cophylinae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.89999999999999858,"base":0,"x":[16],"y":[67],"text":"subfamily: Dendrobatinae<br />member_count:  67<br />subfamily: Dendrobatinae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(69,181,0,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Dendrobatinae","legendgroup":"Dendrobatinae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.89999999999999858,"base":0,"x":[17],"y":[244],"text":"subfamily: Dicroglossinae<br />member_count: 244<br />subfamily: Dicroglossinae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(0,183,9,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Dicroglossinae","legendgroup":"Dicroglossinae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.89999999999999858,"base":0,"x":[18],"y":[6],"text":"subfamily: Discoglossinae<br />member_count:   6<br />subfamily: Discoglossinae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(0,186,56,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Discoglossinae","legendgroup":"Discoglossinae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.89999999999999858,"base":0,"x":[19],"y":[3],"text":"subfamily: Dyscophinae<br />member_count:   3<br />subfamily: Dyscophinae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(0,188,81,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Dyscophinae","legendgroup":"Dyscophinae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.89999999999999858,"base":0,"x":[20],"y":[227],"text":"subfamily: Eleutherodactylinae<br />member_count: 227<br />subfamily: Eleutherodactylinae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(0,189,101,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Eleutherodactylinae","legendgroup":"Eleutherodactylinae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.89999999999999858,"base":0,"x":[21],"y":[83],"text":"subfamily: Gastrophryninae<br />member_count:  83<br />subfamily: Gastrophryninae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(0,191,119,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Gastrophryninae","legendgroup":"Gastrophryninae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.89999999999999858,"base":0,"x":[22],"y":[1],"text":"subfamily: Holoadeninae<br />member_count:   1<br />subfamily: Holoadeninae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(0,192,135,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Holoadeninae","legendgroup":"Holoadeninae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.89999999999999858,"base":0,"x":[23],"y":[3],"text":"subfamily: Hoplophryninae<br />member_count:   3<br />subfamily: Hoplophryninae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(0,192,150,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Hoplophryninae","legendgroup":"Hoplophryninae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.89999999999999858,"base":0,"x":[24],"y":[38],"text":"subfamily: Hyalinobatrachinae<br />member_count:  38<br />subfamily: Hyalinobatrachinae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(0,193,164,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Hyalinobatrachinae","legendgroup":"Hyalinobatrachinae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.89999999999999858,"base":0,"x":[25],"y":[758],"text":"subfamily: Hylinae<br />member_count: 758<br />subfamily: Hylinae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(0,192,178,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Hylinae","legendgroup":"Hylinae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.89999999999999858,"base":0,"x":[26],"y":[73],"text":"subfamily: Hyloxalinae<br />member_count:  73<br />subfamily: Hyloxalinae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(0,192,190,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Hyloxalinae","legendgroup":"Hyloxalinae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.89999999999999858,"base":0,"x":[27],"y":[30],"text":"subfamily: Kalophryninae<br />member_count:  30<br />subfamily: Kalophryninae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(0,190,202,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Kalophryninae","legendgroup":"Kalophryninae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.89999999999999858,"base":0,"x":[28],"y":[7],"text":"subfamily: Laliostominae<br />member_count:   7<br />subfamily: Laliostominae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(0,188,214,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Laliostominae","legendgroup":"Laliostominae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.89999999999999858,"base":0,"x":[29],"y":[2],"text":"subfamily: Lankanectinae<br />member_count:   2<br />subfamily: Lankanectinae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(0,186,224,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Lankanectinae","legendgroup":"Lankanectinae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.89999999999999858,"base":0,"x":[30],"y":[106],"text":"subfamily: Leiuperinae<br />member_count: 106<br />subfamily: Leiuperinae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(0,183,233,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Leiuperinae","legendgroup":"Leiuperinae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.89999999999999858,"base":0,"x":[31],"y":[214],"text":"subfamily: Leptobrachiinae<br />member_count: 214<br />subfamily: Leptobrachiinae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(0,179,242,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Leptobrachiinae","legendgroup":"Leptobrachiinae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.90000000000000213,"base":0,"x":[32],"y":[120],"text":"subfamily: Leptodactylinae<br />member_count: 120<br />subfamily: Leptodactylinae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(0,174,249,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Leptodactylinae","legendgroup":"Leptodactylinae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.90000000000000568,"base":0,"x":[33],"y":[68],"text":"subfamily: Limnodynastinae<br />member_count:  68<br />subfamily: Limnodynastinae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(0,169,255,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Limnodynastinae","legendgroup":"Limnodynastinae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.90000000000000568,"base":0,"x":[34],"y":[10],"text":"subfamily: Liuraninae<br />member_count:  10<br />subfamily: Liuraninae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(40,163,255,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Liuraninae","legendgroup":"Liuraninae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.90000000000000568,"base":0,"x":[35],"y":[205],"text":"subfamily: Mantellinae<br />member_count: 205<br />subfamily: Mantellinae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(97,156,255,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Mantellinae","legendgroup":"Mantellinae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.90000000000000568,"base":0,"x":[36],"y":[155],"text":"subfamily: Megophryinae<br />member_count: 155<br />subfamily: Megophryinae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(130,149,255,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Megophryinae","legendgroup":"Megophryinae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.90000000000000568,"base":0,"x":[37],"y":[1],"text":"subfamily: Melanobatrachinae<br />member_count:   1<br />subfamily: Melanobatrachinae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(156,141,255,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Melanobatrachinae","legendgroup":"Melanobatrachinae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.90000000000000568,"base":0,"x":[38],"y":[126],"text":"subfamily: Microhylinae<br />member_count: 126<br />subfamily: Microhylinae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(177,134,255,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Microhylinae","legendgroup":"Microhylinae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.90000000000000568,"base":0,"x":[39],"y":[69],"text":"subfamily: Myobatrachinae<br />member_count:  69<br />subfamily: Myobatrachinae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(195,126,255,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Myobatrachinae","legendgroup":"Myobatrachinae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.90000000000000568,"base":0,"x":[40],"y":[35],"text":"subfamily: Nyctibatrachinae<br />member_count:  35<br />subfamily: Nyctibatrachinae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(210,119,255,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Nyctibatrachinae","legendgroup":"Nyctibatrachinae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.90000000000000568,"base":0,"x":[41],"y":[21],"text":"subfamily: Occidozyginae<br />member_count:  21<br />subfamily: Occidozyginae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(223,112,249,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Occidozyginae","legendgroup":"Occidozyginae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.90000000000000568,"base":0,"x":[42],"y":[13],"text":"subfamily: Otophryninae<br />member_count:  13<br />subfamily: Otophryninae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(233,106,241,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Otophryninae","legendgroup":"Otophryninae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.90000000000000568,"base":0,"x":[43],"y":[20],"text":"subfamily: Paratelmatobiinae<br />member_count:  20<br />subfamily: Paratelmatobiinae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(241,102,232,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Paratelmatobiinae","legendgroup":"Paratelmatobiinae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.90000000000000568,"base":0,"x":[44],"y":[243],"text":"subfamily: Pelodryadinae<br />member_count: 243<br />subfamily: Pelodryadinae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(248,99,222,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Pelodryadinae","legendgroup":"Pelodryadinae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.90000000000000568,"base":0,"x":[45],"y":[6],"text":"subfamily: Phrynomerinae<br />member_count:   6<br />subfamily: Phrynomerinae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(252,97,211,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Phrynomerinae","legendgroup":"Phrynomerinae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.90000000000000568,"base":0,"x":[46],"y":[68],"text":"subfamily: Phyllomedusinae<br />member_count:  68<br />subfamily: Phyllomedusinae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(255,97,199,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Phyllomedusinae","legendgroup":"Phyllomedusinae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.90000000000000568,"base":0,"x":[47],"y":[14],"text":"subfamily: Phyzelaphryninae<br />member_count:  14<br />subfamily: Phyzelaphryninae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(255,98,186,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Phyzelaphryninae","legendgroup":"Phyzelaphryninae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.90000000000000568,"base":0,"x":[48],"y":[8],"text":"subfamily: Pristimantinae<br />member_count:   8<br />subfamily: Pristimantinae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(255,101,173,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Pristimantinae","legendgroup":"Pristimantinae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.90000000000000568,"base":0,"x":[49],"y":[8],"text":"subfamily: Pyxicephalinae<br />member_count:   8<br />subfamily: Pyxicephalinae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(255,104,158,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Pyxicephalinae","legendgroup":"Pyxicephalinae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.90000000000000568,"base":0,"x":[50],"y":[460],"text":"subfamily: Rhacophorinae<br />member_count: 460<br />subfamily: Rhacophorinae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(255,109,143,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Rhacophorinae","legendgroup":"Rhacophorinae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.90000000000000568,"base":0,"x":[51],"y":[12],"text":"subfamily: Scaphiophryninae<br />member_count:  12<br />subfamily: Scaphiophryninae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(252,113,127,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Scaphiophryninae","legendgroup":"Scaphiophryninae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":23.305936073059364,"r":7.3059360730593621,"b":25.570776255707766,"l":43.105022831050235},"plot_bgcolor":"rgba(235,235,235,1)","paper_bgcolor":"rgba(255,255,255,1)","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[0.40000000000000002,51.600000000000001],"tickmode":"array","ticktext":["Adelastinae","Alcalinae","Allobatinae","Alytinae","Anomaloglossinae","Aromobatinae","Asterophryinae","Astrobatrachinae","Boophinae","Buergeriinae","Cacosterninae","Centroleninae","Ceratobatrachinae","Colostethinae","Cophylinae","Dendrobatinae","Dicroglossinae","Discoglossinae","Dyscophinae","Eleutherodactylinae","Gastrophryninae","Holoadeninae","Hoplophryninae","Hyalinobatrachinae","Hylinae","Hyloxalinae","Kalophryninae","Laliostominae","Lankanectinae","Leiuperinae","Leptobrachiinae","Leptodactylinae","Limnodynastinae","Liuraninae","Mantellinae","Megophryinae","Melanobatrachinae","Microhylinae","Myobatrachinae","Nyctibatrachinae","Occidozyginae","Otophryninae","Paratelmatobiinae","Pelodryadinae","Phrynomerinae","Phyllomedusinae","Phyzelaphryninae","Pristimantinae","Pyxicephalinae","Rhacophorinae","Scaphiophryninae"],"tickvals":[1,2,3,4,5,6,6.9999999999999991,7.9999999999999991,9,10,11,12,13,14.000000000000002,15.000000000000002,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51],"categoryorder":"array","categoryarray":["Adelastinae","Alcalinae","Allobatinae","Alytinae","Anomaloglossinae","Aromobatinae","Asterophryinae","Astrobatrachinae","Boophinae","Buergeriinae","Cacosterninae","Centroleninae","Ceratobatrachinae","Colostethinae","Cophylinae","Dendrobatinae","Dicroglossinae","Discoglossinae","Dyscophinae","Eleutherodactylinae","Gastrophryninae","Holoadeninae","Hoplophryninae","Hyalinobatrachinae","Hylinae","Hyloxalinae","Kalophryninae","Laliostominae","Lankanectinae","Leiuperinae","Leptobrachiinae","Leptodactylinae","Limnodynastinae","Liuraninae","Mantellinae","Megophryinae","Melanobatrachinae","Microhylinae","Myobatrachinae","Nyctibatrachinae","Occidozyginae","Otophryninae","Paratelmatobiinae","Pelodryadinae","Phrynomerinae","Phyllomedusinae","Phyzelaphryninae","Pristimantinae","Pyxicephalinae","Rhacophorinae","Scaphiophryninae"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.6529680365296811,"tickwidth":0.66417600664176002,"showticklabels":false,"tickfont":{"color":null,"family":null,"size":0},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"y","title":{"text":"subfamily","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-37.899999999999999,795.89999999999998],"tickmode":"array","ticktext":["0","200","400","600"],"tickvals":[0,200,400.00000000000006,600],"categoryorder":"array","categoryarray":["0","200","400","600"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.6529680365296811,"tickwidth":0.66417600664176002,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.68949771689498},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"x","title":{"text":"Member Count","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"shapes":[],"showlegend":true,"legend":{"bgcolor":"rgba(255,255,255,1)","bordercolor":"transparent","borderwidth":1.8897637795275593,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.68949771689498},"title":{"text":"subfamily","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"535c70fb1666":{"x":{},"y":{},"fill":{},"type":"bar"}},"cur_data":"535c70fb1666","visdat":{"535c70fb1666":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">taxonplot</span>(frogs_and_toads_amphibiaweb, family)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div class="plotly html-widget html-fill-item" id="htmlwidget-826347f0710c6c3a93a9" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-826347f0710c6c3a93a9">{"x":{"data":[{"orientation":"v","width":0.89999999999999991,"base":0,"x":[1],"y":[3],"text":"family: Allophrynidae<br />member_count:    3<br />family: Allophrynidae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(248,118,109,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Allophrynidae","legendgroup":"Allophrynidae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.90000000000000013,"base":0,"x":[2],"y":[26],"text":"family: Alsodidae<br />member_count:   26<br />family: Alsodidae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(244,123,91,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Alsodidae","legendgroup":"Alsodidae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.90000000000000036,"base":0,"x":[3],"y":[12],"text":"family: Alytidae<br />member_count:   12<br />family: Alytidae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(239,127,71,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Alytidae","legendgroup":"Alytidae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.90000000000000036,"base":0,"x":[4],"y":[146],"text":"family: Aromobatidae<br />member_count:  146<br />family: Aromobatidae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(233,132,44,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Aromobatidae","legendgroup":"Aromobatidae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.90000000000000036,"base":0,"x":[5],"y":[154],"text":"family: Arthroleptidae<br />member_count:  154<br />family: Arthroleptidae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(227,136,0,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Arthroleptidae","legendgroup":"Arthroleptidae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.90000000000000036,"base":0,"x":[6],"y":[2],"text":"family: Ascaphidae<br />member_count:    2<br />family: Ascaphidae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(221,141,0,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Ascaphidae","legendgroup":"Ascaphidae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.90000000000000036,"base":0,"x":[7],"y":[13],"text":"family: Batrachylidae<br />member_count:   13<br />family: Batrachylidae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(214,145,0,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Batrachylidae","legendgroup":"Batrachylidae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.89999999999999947,"base":0,"x":[8],"y":[10],"text":"family: Bombinatoridae<br />member_count:   10<br />family: Bombinatoridae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(206,149,0,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Bombinatoridae","legendgroup":"Bombinatoridae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.89999999999999858,"base":0,"x":[9],"y":[84],"text":"family: Brachycephalidae<br />member_count:   84<br />family: Brachycephalidae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(197,153,0,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Brachycephalidae","legendgroup":"Brachycephalidae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.89999999999999858,"base":0,"x":[10],"y":[37],"text":"family: Brevicipitidae<br />member_count:   37<br />family: Brevicipitidae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(188,157,0,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Brevicipitidae","legendgroup":"Brevicipitidae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.89999999999999858,"base":0,"x":[11],"y":[666],"text":"family: Bufonidae<br />member_count:  666<br />family: Bufonidae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(178,161,0,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Bufonidae","legendgroup":"Bufonidae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.89999999999999858,"base":0,"x":[12],"y":[1],"text":"family: Caligophrynidae<br />member_count:    1<br />family: Caligophrynidae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(167,164,0,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Caligophrynidae","legendgroup":"Caligophrynidae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.89999999999999858,"base":0,"x":[13],"y":[5],"text":"family: Calyptocephalellidae<br />member_count:    5<br />family: Calyptocephalellidae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(156,167,0,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Calyptocephalellidae","legendgroup":"Calyptocephalellidae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.89999999999999858,"base":0,"x":[14],"y":[171],"text":"family: Centrolenidae<br />member_count:  171<br />family: Centrolenidae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(142,171,0,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Centrolenidae","legendgroup":"Centrolenidae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.89999999999999858,"base":0,"x":[15],"y":[107],"text":"family: Ceratobatrachidae<br />member_count:  107<br />family: Ceratobatrachidae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(128,174,0,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Ceratobatrachidae","legendgroup":"Ceratobatrachidae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.89999999999999858,"base":0,"x":[16],"y":[12],"text":"family: Ceratophryidae<br />member_count:   12<br />family: Ceratophryidae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(111,176,0,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Ceratophryidae","legendgroup":"Ceratophryidae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.89999999999999858,"base":0,"x":[17],"y":[6],"text":"family: Ceuthomantidae<br />member_count:    6<br />family: Ceuthomantidae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(90,179,0,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Ceuthomantidae","legendgroup":"Ceuthomantidae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.89999999999999858,"base":0,"x":[18],"y":[8],"text":"family: Conrauidae<br />member_count:    8<br />family: Conrauidae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(61,181,0,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Conrauidae","legendgroup":"Conrauidae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.89999999999999858,"base":0,"x":[19],"y":[136],"text":"family: Craugastoridae<br />member_count:  136<br />family: Craugastoridae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(0,184,19,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Craugastoridae","legendgroup":"Craugastoridae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.89999999999999858,"base":0,"x":[20],"y":[38],"text":"family: Cycloramphidae<br />member_count:   38<br />family: Cycloramphidae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(0,186,56,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Cycloramphidae","legendgroup":"Cycloramphidae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.89999999999999858,"base":0,"x":[21],"y":[214],"text":"family: Dendrobatidae<br />member_count:  214<br />family: Dendrobatidae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(0,187,79,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Dendrobatidae","legendgroup":"Dendrobatidae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.89999999999999858,"base":0,"x":[22],"y":[265],"text":"family: Dicroglossidae<br />member_count:  265<br />family: Dicroglossidae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(0,189,97,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Dicroglossidae","legendgroup":"Dicroglossidae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.89999999999999858,"base":0,"x":[23],"y":[241],"text":"family: Eleutherodactylidae<br />member_count:  241<br />family: Eleutherodactylidae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(0,190,113,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Eleutherodactylidae","legendgroup":"Eleutherodactylidae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.89999999999999858,"base":0,"x":[24],"y":[6],"text":"family: Heleophrynidae<br />member_count:    6<br />family: Heleophrynidae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(0,191,128,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Heleophrynidae","legendgroup":"Heleophrynidae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.89999999999999858,"base":0,"x":[25],"y":[127],"text":"family: Hemiphractidae<br />member_count:  127<br />family: Hemiphractidae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(0,192,142,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Hemiphractidae","legendgroup":"Hemiphractidae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.89999999999999858,"base":0,"x":[26],"y":[9],"text":"family: Hemisotidae<br />member_count:    9<br />family: Hemisotidae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(0,193,155,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Hemisotidae","legendgroup":"Hemisotidae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.89999999999999858,"base":0,"x":[27],"y":[1086],"text":"family: Hylidae<br />member_count: 1086<br />family: Hylidae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(0,193,168,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Hylidae","legendgroup":"Hylidae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.89999999999999858,"base":0,"x":[28],"y":[49],"text":"family: Hylodidae<br />member_count:   49<br />family: Hylodidae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(0,192,180,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Hylodidae","legendgroup":"Hylodidae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.89999999999999858,"base":0,"x":[29],"y":[236],"text":"family: Hyperoliidae<br />member_count:  236<br />family: Hyperoliidae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(0,192,191,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Hyperoliidae","legendgroup":"Hyperoliidae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.89999999999999858,"base":0,"x":[30],"y":[3],"text":"family: Leiopelmatidae<br />member_count:    3<br />family: Leiopelmatidae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(0,190,202,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Leiopelmatidae","legendgroup":"Leiopelmatidae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.89999999999999858,"base":0,"x":[31],"y":[246],"text":"family: Leptodactylidae<br />member_count:  246<br />family: Leptodactylidae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(0,189,212,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Leptodactylidae","legendgroup":"Leptodactylidae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.90000000000000213,"base":0,"x":[32],"y":[300],"text":"family: Mantellidae<br />member_count:  300<br />family: Mantellidae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(0,187,221,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Mantellidae","legendgroup":"Mantellidae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.90000000000000568,"base":0,"x":[33],"y":[369],"text":"family: Megophryidae<br />member_count:  369<br />family: Megophryidae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(0,184,230,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Megophryidae","legendgroup":"Megophryidae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.90000000000000568,"base":0,"x":[34],"y":[24],"text":"family: Micrixalidae<br />member_count:   24<br />family: Micrixalidae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(0,181,238,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Micrixalidae","legendgroup":"Micrixalidae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.90000000000000568,"base":0,"x":[35],"y":[768],"text":"family: Microhylidae<br />member_count:  768<br />family: Microhylidae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(0,177,245,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Microhylidae","legendgroup":"Microhylidae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.90000000000000568,"base":0,"x":[36],"y":[138],"text":"family: Myobatrachidae<br />member_count:  138<br />family: Myobatrachidae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(0,172,251,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Myobatrachidae","legendgroup":"Myobatrachidae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.90000000000000568,"base":0,"x":[37],"y":[2],"text":"family: Nasikabatrachidae<br />member_count:    2<br />family: Nasikabatrachidae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(0,167,255,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Nasikabatrachidae","legendgroup":"Nasikabatrachidae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.90000000000000568,"base":0,"x":[38],"y":[2],"text":"family: Neblinaphrynidae<br />member_count:    2<br />family: Neblinaphrynidae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(50,162,255,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Neblinaphrynidae","legendgroup":"Neblinaphrynidae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.90000000000000568,"base":0,"x":[39],"y":[38],"text":"family: Nyctibatrachidae<br />member_count:   38<br />family: Nyctibatrachidae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(97,156,255,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Nyctibatrachidae","legendgroup":"Nyctibatrachidae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.90000000000000568,"base":0,"x":[40],"y":[5],"text":"family: Odontobatrachidae<br />member_count:    5<br />family: Odontobatrachidae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(127,150,255,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Odontobatrachidae","legendgroup":"Odontobatrachidae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.90000000000000568,"base":0,"x":[41],"y":[56],"text":"family: Odontophrynidae<br />member_count:   56<br />family: Odontophrynidae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(151,143,255,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Odontophrynidae","legendgroup":"Odontophrynidae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.90000000000000568,"base":0,"x":[42],"y":[6],"text":"family: Pelobatidae<br />member_count:    6<br />family: Pelobatidae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(171,136,255,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Pelobatidae","legendgroup":"Pelobatidae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.90000000000000568,"base":0,"x":[43],"y":[5],"text":"family: Pelodytidae<br />member_count:    5<br />family: Pelodytidae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(188,129,255,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Pelodytidae","legendgroup":"Pelodytidae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.90000000000000568,"base":0,"x":[44],"y":[13],"text":"family: Petropedetidae<br />member_count:   13<br />family: Petropedetidae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(202,122,255,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Petropedetidae","legendgroup":"Petropedetidae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.90000000000000568,"base":0,"x":[45],"y":[100],"text":"family: Phrynobatrachidae<br />member_count:  100<br />family: Phrynobatrachidae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(215,116,253,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Phrynobatrachidae","legendgroup":"Phrynobatrachidae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.90000000000000568,"base":0,"x":[46],"y":[41],"text":"family: Pipidae<br />member_count:   41<br />family: Pipidae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(226,110,247,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Pipidae","legendgroup":"Pipidae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.90000000000000568,"base":0,"x":[47],"y":[67],"text":"family: Ptychadenidae<br />member_count:   67<br />family: Ptychadenidae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(234,105,240,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Ptychadenidae","legendgroup":"Ptychadenidae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.90000000000000568,"base":0,"x":[48],"y":[91],"text":"family: Pyxicephalidae<br />member_count:   91<br />family: Pyxicephalidae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(242,101,232,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Pyxicephalidae","legendgroup":"Pyxicephalidae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.90000000000000568,"base":0,"x":[49],"y":[470],"text":"family: Ranidae<br />member_count:  470<br />family: Ranidae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(247,99,223,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Ranidae","legendgroup":"Ranidae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.90000000000000568,"base":0,"x":[50],"y":[19],"text":"family: Ranixalidae<br />member_count:   19<br />family: Ranixalidae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(252,97,213,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Ranixalidae","legendgroup":"Ranixalidae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.90000000000000568,"base":0,"x":[51],"y":[467],"text":"family: Rhacophoridae<br />member_count:  467<br />family: Rhacophoridae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(255,97,203,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Rhacophoridae","legendgroup":"Rhacophoridae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.90000000000000568,"base":0,"x":[52],"y":[3],"text":"family: Rhinodermatidae<br />member_count:    3<br />family: Rhinodermatidae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(255,98,191,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Rhinodermatidae","legendgroup":"Rhinodermatidae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.90000000000000568,"base":0,"x":[53],"y":[1],"text":"family: Rhinophrynidae<br />member_count:    1<br />family: Rhinophrynidae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(255,100,179,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Rhinophrynidae","legendgroup":"Rhinophrynidae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.90000000000000568,"base":0,"x":[54],"y":[7],"text":"family: Scaphiopodidae<br />member_count:    7<br />family: Scaphiopodidae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(255,102,167,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Scaphiopodidae","legendgroup":"Scaphiopodidae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.90000000000000568,"base":0,"x":[55],"y":[4],"text":"family: Sooglossidae<br />member_count:    4<br />family: Sooglossidae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(255,106,154,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Sooglossidae","legendgroup":"Sooglossidae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.90000000000000568,"base":0,"x":[56],"y":[840],"text":"family: Strabomantidae<br />member_count:  840<br />family: Strabomantidae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(254,110,140,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Strabomantidae","legendgroup":"Strabomantidae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"orientation":"v","width":0.90000000000000568,"base":0,"x":[57],"y":[63],"text":"family: Telmatobiidae<br />member_count:   63<br />family: Telmatobiidae","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(251,114,125,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Telmatobiidae","legendgroup":"Telmatobiidae","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":23.305936073059364,"r":7.3059360730593621,"b":25.570776255707766,"l":43.105022831050235},"plot_bgcolor":"rgba(235,235,235,1)","paper_bgcolor":"rgba(255,255,255,1)","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[0.40000000000000002,57.600000000000001],"tickmode":"array","ticktext":["Allophrynidae","Alsodidae","Alytidae","Aromobatidae","Arthroleptidae","Ascaphidae","Batrachylidae","Bombinatoridae","Brachycephalidae","Brevicipitidae","Bufonidae","Caligophrynidae","Calyptocephalellidae","Centrolenidae","Ceratobatrachidae","Ceratophryidae","Ceuthomantidae","Conrauidae","Craugastoridae","Cycloramphidae","Dendrobatidae","Dicroglossidae","Eleutherodactylidae","Heleophrynidae","Hemiphractidae","Hemisotidae","Hylidae","Hylodidae","Hyperoliidae","Leiopelmatidae","Leptodactylidae","Mantellidae","Megophryidae","Micrixalidae","Microhylidae","Myobatrachidae","Nasikabatrachidae","Neblinaphrynidae","Nyctibatrachidae","Odontobatrachidae","Odontophrynidae","Pelobatidae","Pelodytidae","Petropedetidae","Phrynobatrachidae","Pipidae","Ptychadenidae","Pyxicephalidae","Ranidae","Ranixalidae","Rhacophoridae","Rhinodermatidae","Rhinophrynidae","Scaphiopodidae","Sooglossidae","Strabomantidae","Telmatobiidae"],"tickvals":[1,2,3,3.9999999999999996,5,6,7,8,9,10,11,12,13,14,14.999999999999998,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31.000000000000004,31.999999999999996,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57],"categoryorder":"array","categoryarray":["Allophrynidae","Alsodidae","Alytidae","Aromobatidae","Arthroleptidae","Ascaphidae","Batrachylidae","Bombinatoridae","Brachycephalidae","Brevicipitidae","Bufonidae","Caligophrynidae","Calyptocephalellidae","Centrolenidae","Ceratobatrachidae","Ceratophryidae","Ceuthomantidae","Conrauidae","Craugastoridae","Cycloramphidae","Dendrobatidae","Dicroglossidae","Eleutherodactylidae","Heleophrynidae","Hemiphractidae","Hemisotidae","Hylidae","Hylodidae","Hyperoliidae","Leiopelmatidae","Leptodactylidae","Mantellidae","Megophryidae","Micrixalidae","Microhylidae","Myobatrachidae","Nasikabatrachidae","Neblinaphrynidae","Nyctibatrachidae","Odontobatrachidae","Odontophrynidae","Pelobatidae","Pelodytidae","Petropedetidae","Phrynobatrachidae","Pipidae","Ptychadenidae","Pyxicephalidae","Ranidae","Ranixalidae","Rhacophoridae","Rhinodermatidae","Rhinophrynidae","Scaphiopodidae","Sooglossidae","Strabomantidae","Telmatobiidae"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.6529680365296811,"tickwidth":0.66417600664176002,"showticklabels":false,"tickfont":{"color":null,"family":null,"size":0},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"y","title":{"text":"family","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-54.300000000000004,1140.3],"tickmode":"array","ticktext":["0","300","600","900"],"tickvals":[0,300,600,900],"categoryorder":"array","categoryarray":["0","300","600","900"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.6529680365296811,"tickwidth":0.66417600664176002,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.68949771689498},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"x","title":{"text":"Member Count","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"shapes":[],"showlegend":true,"legend":{"bgcolor":"rgba(255,255,255,1)","bordercolor":"transparent","borderwidth":1.8897637795275593,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.68949771689498},"title":{"text":"family","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"535c6c907f00":{"x":{},"y":{},"fill":{},"type":"bar"}},"cur_data":"535c6c907f00","visdat":{"535c6c907f00":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">taxonplot</span>(frogs_and_toads_amphibiaweb, ordr)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div class="plotly html-widget html-fill-item" id="htmlwidget-795d2fc712727ed80cb9" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-795d2fc712727ed80cb9">{"x":{"data":[{"orientation":"v","width":0.89999999999999991,"base":0,"x":[1],"y":[8018],"text":"ordr: Anura<br />member_count: 8018<br />ordr: Anura","type":"bar","textposition":"none","marker":{"autocolorscale":false,"color":"rgba(248,118,109,1)","line":{"width":1.8897637795275593,"color":"transparent"}},"name":"Anura","legendgroup":"Anura","showlegend":true,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null}],"layout":{"margin":{"t":23.305936073059364,"r":7.3059360730593621,"b":25.570776255707766,"l":48.949771689497723},"plot_bgcolor":"rgba(235,235,235,1)","paper_bgcolor":"rgba(255,255,255,1)","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[0.40000000000000002,1.6000000000000001],"tickmode":"array","ticktext":["Anura"],"tickvals":[1],"categoryorder":"array","categoryarray":["Anura"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.6529680365296811,"tickwidth":0.66417600664176002,"showticklabels":false,"tickfont":{"color":null,"family":null,"size":0},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"y","title":{"text":"ordr","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-400.90000000000003,8418.8999999999996],"tickmode":"array","ticktext":["0","2000","4000","6000","8000"],"tickvals":[0,2000,3999.9999999999995,6000,8000],"categoryorder":"array","categoryarray":["0","2000","4000","6000","8000"],"nticks":null,"ticks":"outside","tickcolor":"rgba(51,51,51,1)","ticklen":3.6529680365296811,"tickwidth":0.66417600664176002,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.68949771689498},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(255,255,255,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"x","title":{"text":"Member Count","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"shapes":[],"showlegend":true,"legend":{"bgcolor":"rgba(255,255,255,1)","bordercolor":"transparent","borderwidth":1.8897637795275593,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.68949771689498},"title":{"text":"ordr","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"535c7db27ff":{"x":{},"y":{},"fill":{},"type":"bar"}},"cur_data":"535c7db27ff","visdat":{"535c7db27ff":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<p>Quick and easy visualizations your multi-species data with phycount() and taxonplot()!</p>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

@@ -1,0 +1,12 @@
+name: quatro_hw_06
+title: Quatro_HW_06
+username: mdelude
+account: mdelude
+server: connect.posit.cloud
+hostUrl: https://api.connect.posit.cloud/v1
+appId: 01a11359-1753-d764-e64b-ca5f3d01e8d0
+bundleId:
+url: https://connect.posit.cloud/mdelude/content/01a11359-1753-d764-e64b-ca5f3d01e8d0
+version: 1
+asMultiple: FALSE
+asStatic: TRUE

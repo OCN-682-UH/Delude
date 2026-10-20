@@ -1,0 +1,138 @@
+---
+title: "Functions Homework"
+author: "Mano'ike Delude"
+format:
+  html:
+    code-fold: true
+    code-summary: "Show code"
+    theme: minty
+---
+###  The purpose of this script is to
+-  Make a function that helps plotting
+-  Make a function that helps tidy data
+
+###  Functions
+-  phycount(data, column) |
+Returns a dataframe of your column, and its group count
+-  taxonplot(data, column) |
+Returns a plotly widget bar graph of said group count
+
+##  Libraries
+```{r}
+#| message: false
+library(tidyverse)
+library(tidytuesdayR)
+library(plotly)
+```
+
+##  Data
+```{r}
+tuesdata <- tidytuesdayR::tt_load(2026, week = 41)
+# ^ tidytuesday data requires you to load in both the dfs of the week
+# v and read in the dataset you're interested in
+frogs_and_toads_amphibiaweb <- tuesdata$frogs_and_toads_amphibiaweb
+```
+
+*Taking a look at the data*
+```{r}
+str(frogs_and_toads_amphibiaweb)
+
+glimpse(frogs_and_toads_amphibiaweb)
+```
+Lots of NAs here, I'm going to plot counts of different taxonomic levels
+
+##  Functions
+
+*Building a function to easliy count and sort taxonomic observations, returning the resulting dataframe*
+```{r}
+#making a function that extracts a count of a certain subset of taxonomic data
+
+#data = your original data frame, x = the taxonomic observation <chr>
+phycount = function(data, taxa) { 
+  df <- data |>
+    select({{taxa}}) |>
+    drop_na() |>
+    group_by({{taxa}}) |>
+    summarize(member_count = n()) |>
+    arrange(desc(member_count))
+    return(df)
+}
+
+```
+Hooray! Lets see if it works!
+```{r}
+phycount(frogs_and_toads_amphibiaweb, specificepithet) #Species~ish
+phycount(frogs_and_toads_amphibiaweb, genus) #genus
+phycount(frogs_and_toads_amphibiaweb, family) #family
+phycount(frogs_and_toads_amphibiaweb, subfamily) #subfamily, which in this case is bigger than family
+phycount(frogs_and_toads_amphibiaweb, ordr) #order, which I guess they named that way because calling things "order" in your df would lead to some nightmare headaches. Definitely stealing this tip.
+```
+It does!!!!
+
+phycount() will be more useful than glimpse() or head() for a quick view of taxonomic diversity at any level. For me, it'll be useful as a method to ideate which level (species, family, subfamily, order) to use for plotting!
+
+Plus, I avoid 7 lines of code for each taxonomic level :p
+
+
+*Plotting functions*
+```{r}
+taxonplot = function(df, taxa) {
+      
+  to_ggplot <- phycount(df, {{taxa}})
+                #Nested function finally works!!! Hooray!!
+  
+  to_plotly <- ggplot(data = to_ggplot, aes(
+          x = {{taxa}},
+          y = member_count,
+       fill = {{taxa}})) +
+      geom_col() +
+      theme( 
+            axis.text.x = element_blank()) +
+      #guides(fill = "none") +
+      labs(y = "Member Count",
+           )
+
+ggplotly(to_plotly)
+    
+}
+```
+taxonplot() will quickly visualize the disparity in observations based on the taxonomic level you throw to it.
+
+Extra useful that it reads the same variables as phycount() so if you know one you can do the other.
+
+*The scratch-paper work is in this chunk*
+```{r}
+#| message: false
+#| eval: false
+#plot_dat <- phycount(frogs_and_toads_amphibiaweb, subfamily)
+  #^Testing set for building the function
+
+#unfortunately I remembered that plotly is so finicky about data frames and can't handle something changing in the middle of a function. So I'm building it with ggplotly
+
+to_plotly <- ggplot(data = plot_dat, aes(
+          x = subfamily,
+          y = member_count,
+       fill = subfamily)) +
+      geom_col() +
+      theme( 
+            axis.text.x = element_blank()) +
+      #guides(fill = "none") +
+  #^Can't decide if the legend is good or not, it's nice for HTML since you can click and highlight the groups you're interested in
+      labs(y = "Member Count",
+           )
+
+ggplotly(to_plotly)
+
+
+```
+*The taxonplot() function in use*
+```{r}
+#phydf <- phycount(frogs_and_toads_amphibiaweb, subfamily)
+  #^Unnecessarry now that the function... functions!
+  #VThis one is commented out because it takes too long to make, and a >6k bar graph has no use to us
+#taxonplot(frogs_and_toads_amphibiaweb, specificepithet)
+taxonplot(frogs_and_toads_amphibiaweb, subfamily)
+taxonplot(frogs_and_toads_amphibiaweb, family)
+taxonplot(frogs_and_toads_amphibiaweb, ordr)
+```
+Quick and easy visualizations your multi-species data with phycount() and taxonplot()!

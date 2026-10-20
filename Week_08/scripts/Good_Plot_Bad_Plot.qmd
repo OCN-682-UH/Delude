@@ -1,0 +1,40 @@
+---
+title: "Good Plot, Bad Plot"
+format: html
+---
+
+#  Homework 08: Good plot Bad plot
+
+###  The purpose of this script is to [good plot bad plot]
+
+##  Libraries
+```{r}
+library(tidyverse)
+library(here)
+library(lubridate)
+library(tidytuesdayR)
+library(maps)
+library(mapdata)
+library(mapproj)
+library(plotly)
+```
+
+##  Data
+```{r}
+tuesdata <- tidytuesdayR::tt_load(2026, week = 36)
+# ^ tidytuesday data requires you to load in both the dfs of the week
+# v and read in the dataset you're interested in
+cafe <- tuesdata$cafe
+# This dataset comes with a 2nd df indexing labor-hours
+cappuccino_index <- tuesdata$cappuccino_index
+```
+
+*Taking a look at the data*
+```{r}
+str(cafe)
+str(cappuccino_index)
+
+glimpse(cafe)
+glimpse(cappuccino_index)
+```
+
