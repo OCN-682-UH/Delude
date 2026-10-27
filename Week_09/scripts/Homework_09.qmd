@@ -1,0 +1,109 @@
+---
+title: "Factors HW 09"
+author: "Mano'ike Delude"
+format:
+  html:
+    code-fold: true
+    code-summary: "Show code"
+    theme: minty
+---
+
+This code will summarize intertidal data with the main point being to practice factoring.
+
+###  Libraries
+```{r}
+#| message: false
+
+library(tidyverse)
+library(kableExtra)
+library(here)
+library(forcats)
+library(janitor)
+library(ggplot2)
+library(readr)
+```
+
+###  Loading in data
+```{r}
+#| message: false
+tide <- read_csv(here("Week_09", "data", "intertidaldata.csv"))
+
+tide_lat <- read_csv(here("Week_09", "data", "intertidaldata_latitude.csv"))
+
+str(tide)
+str(tide_lat)
+```
+###   Tidying Tide Data
+```{r}
+clean_tide <- tide |> 
+  clean_names() |> #makes col names to snake case
+  mutate(
+    quadrat = quadrat |> 
+      str_remove_all("[0-9]+") |> #removes numbers
+      str_remove_all("[^[:alnum:]]") |> #removes non-alphanumeric characters
+      str_trim() #removes spaces
+  )
+```
+Our data first needs to get all those gross . and 1 and ! out of the tide quadrat column before we do anything.
+
+Each quadrat is made up of 16 locations, 10 observations each, meaning that to summarize the percent makeup of a tidal quadrat we'll have to divide the resulting number by 16000 (two extra zeroes to make it a percent).
+
+Here we will mutate the table to make it easier to plot, since some variables are a percentage, and some are a count.
+```{r}
+plot_tide <- clean_tide |>
+    select(!site) |> select(!transect) |>#we don't need these since we will be plotting broader tidal data
+    mutate(quadrat = fct_relevel(quadrat, "High", "Mid", "Low")) |> #factors! To make the tidal data make sense visually later
+  #group_by(quadrat) |>
+  pivot_longer(cols = c(bare_rock, algae, mussels, small_barnacles, large_barnacles, gooseneck_barnacles, anemone),
+               names_to = "quadrat_makeup",
+               values_to = "percent_filled") |> #these quadrants all make up a whole observation
+  group_by(quadrat, quadrat_makeup) |>
+  summarise(
+    quadrat_totals = sum(percent_filled)) |>
+  mutate(quadrat_makeup = fct_reorder(quadrat_makeup, quadrat_totals)) #factor the results for plotting
+
+#  pivot_longer(cols = c(whelks_counts, crabs_counts, stars_counts),
+#               names_to = "species",
+#               values_to = "species_count") 
+# Section to add the species value as a side plot, but I think that's better as a separate df
+
+plot_tide
+#our plottable data
+
+```
+Adjusting some labels
+
+```{r}
+plot_labels <- c(
+  quadrat_makeup = "Observations",
+  anemone = "Anemone",
+  mussels = "Mussels",
+  large_barnacles = "Large Barnacles",
+  algae = "Algae",
+  small_barnacles = "Small Barnacles",
+  bare_rock = "Bare Rock",
+  quadrat = "Tidal Zone"
+)
+```
+
+### Plotting
+Phew! Now that the summaries of the tidal locations are put together now we can wrangle it into a plot!
+```{r}
+#since we facorted things before this, we don't need to for this one!
+tide_img <- plot_tide |>
+  ggplot(aes(x = quadrat,
+             y = (quadrat_totals/16000), #the number of obs that got condensed, divided down for an easier y-axis
+             fill = quadrat_makeup)) +
+  geom_col() +
+  labs(title = "Makeup of Different Tidal Zones",
+       subtitle = "Diversity Index is total representation of Observations/(Locations * Reps * 100)",
+       dictionary = plot_labels,
+       y = "Averaged Diversity Index")
+               
+tide_img
+```
+Saving!
+```{r}
+ggsave(here("Week_09", "output", "TidalMakup.png"))
+```
+

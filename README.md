@@ -12,6 +12,8 @@
   [This is the homework link](https://01a15784-dee6-bcf8-c35e-01f4c254e17f.share.connect.posit.cloud/)
 ###### Good plot bad plot done!
   [This is the good plot bad plot](https://01a15b61-8da5-b688-eccf-973b582345e2.share.connect.posit.cloud/)
+###### Week 9 Factors homework done!
+  [This is the factor homework line](https://01a17f70-454c-cc0f-9ddf-b9567acdcd01.share.connect.posit.cloud/)
   
 # *Week_04*
 
