@@ -20,9 +20,15 @@ Loading TidyTuesday Fictional PowerRanking data
 #Code comes from the TidyTuesday Github
 tuesdata <- tidytuesdayR::tt_load(2026, week = 45)
 
-fiction_citations <- tuesdata$fiction_citations
-fiction_deaths <- tuesdata$fiction_deaths
+fiction_citations <- tuesdata$fiction_citations 
+  
+fiction_deaths <- tuesdata$fiction_deaths |>
+  write_csv(here("Week_12","shiny","FalseObituary","data","fiction_deaths.csv"))
+
 fiction_rankings <- tuesdata$fiction_rankings
+
+
+
 ```
 
 Exploring the data

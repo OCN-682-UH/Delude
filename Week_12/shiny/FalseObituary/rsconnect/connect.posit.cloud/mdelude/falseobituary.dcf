@@ -1,0 +1,12 @@
+name: falseobituary
+title: FalseObituary
+username: mdelude
+account: mdelude
+server: connect.posit.cloud
+hostUrl: https://api.connect.posit.cloud/v1
+appId: 01a1eb82-1ad6-a473-ac38-48175e8ed82c
+bundleId:
+url: https://connect.posit.cloud/mdelude/content/01a1eb82-1ad6-a473-ac38-48175e8ed82c
+version: 1
+asMultiple: FALSE
+asStatic: FALSE

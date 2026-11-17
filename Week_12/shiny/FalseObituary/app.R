@@ -7,18 +7,24 @@
 #    https://shiny.posit.co/
 #
 
+# Loading libraries
+
 library(shiny)
 library(DT) #needed to render data tables in Shiny
 library(tidyverse)
-library(tidytuesdayR)
+#library(tidytuesdayR)
+#Have to hard-code the .csv in so posit cloud is happy
 
 # Loading TidyTuesday Data
 #Code comes from the TidyTuesday Github
-tuesdata <- tidytuesdayR::tt_load(2026, week = 45)
-
-fiction_citations <- tuesdata$fiction_citations
-fiction_deaths <- tuesdata$fiction_deaths
-fiction_rankings <- tuesdata$fiction_rankings
+#tryCatch({
+#  tuesdata <- tidytuesdayR::tt_load(2026, week = 45)
+#}, error = function(e) {
+#  message("GitHub auth failed: ", e$message)
+#})
+#fiction_citations <- tuesdata$fiction_citations
+fiction_deaths <- read_csv("data/fiction_deaths.csv")  #only df we're using today
+#fiction_rankings <- tuesdata$fiction_rankings
 
 
 # Define UI for application that selects a fictional character from a dropdown menu
