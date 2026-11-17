@@ -1,0 +1,47 @@
+---
+title: "server_plotting_development"
+format: html
+author: "mdelude"
+---
+
+# Development and testing for the FalseObituary shiny app's function section
+
+Loading Libraries
+```{r}
+#|message: FALSE
+library(tidyverse)
+library(tidytuesdayR)
+library(here)
+
+```
+
+Loading TidyTuesday Fictional PowerRanking data
+```{r}
+#Code comes from the TidyTuesday Github
+tuesdata <- tidytuesdayR::tt_load(2026, week = 45)
+
+fiction_citations <- tuesdata$fiction_citations
+fiction_deaths <- tuesdata$fiction_deaths
+fiction_rankings <- tuesdata$fiction_rankings
+```
+
+Exploring the data
+```{r}
+str(fiction_citations)
+str(fiction_deaths)
+str(fiction_rankings)
+```
+
+Displaying a table of your selected hero
+```{r}
+
+fiction_deaths_clean <- fiction_deaths |>
+  select(victim, killer, year, confidence, undone, verdict)
+
+
+```
+
+```{r}
+
+```
+

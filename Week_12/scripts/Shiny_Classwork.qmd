@@ -1,0 +1,19 @@
+---
+title: "Shiny_Classwork"
+format: html
+---
+
+```{r}
+library(shiny)
+
+ui <- fluidPage('Hello World') #the code used to "creade a webpage"
+
+server <- function(input, output){}
+
+shinyApp(ui = ui, server = server)
+```
+
+```{r}
+
+```
+
