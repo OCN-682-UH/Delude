@@ -1,0 +1,152 @@
+---
+title: "Classwork_iterative"
+format: html
+author: "Mano'ike Delude"
+---
+
+```{r}
+library(tidyverse)
+library(here)
+```
+
+```{r}
+
+
+years <- c(2015:2021)
+
+for (i in years) {
+  print(paste("The year is", i))
+}
+
+
+
+
+```
+
+```{r}
+year_data <- tibble(year = rep(NA, length(years)),
+                    year_name = rep(NA, length(years)))
+
+
+
+year_data
+```
+
+```{r}
+for ( i in seq_along(years)) {
+  year_data$year_name[i] <- paste("The year is", years[i])
+  year_data$year[i] < - years[i]
+} #in the i'th row, put in the i'th year
+year_data
+
+
+```
+
+```{r}
+testdata <- read_csv(here("Week_13", "data", "cond_data", "011521_CT316_1pcal.csv"))
+
+glimpse(testdata)
+
+```
+
+```{r}
+CondPath <- here("Week_13","data", "cond_data")
+
+files <- dir(path = CondPath, pattern= ".csv")
+
+files
+```
+
+```{r}
+#preallocate a df for the loop
+cond_data <- tibble(filename = rep(NA, length(files)),
+                    mean_temp = rep(NA, length(files)),
+                    mean_sal = rep(NA, length(files)))
+cond_data
+
+raw_data <- read_csv(paste0(CondPath, "/", files[1]))
+
+head(raw_data)
+
+mean_temp <- mean(raw_data$Temperature, na.rm=TRUE)
+mean_sal <- mean(raw_data$Salinity, na.rm=TRUE)
+```
+```{r}
+#making the loop that fills the df
+
+for(i in seq_along(files)){
+  raw_data <- read_csv(paste0(CondPath, "/", files[i]))
+
+  cond_data$filename[i] <- files[i]
+  cond_data$mean_temp[i] <-  mean(raw_data$Temperature, na.rm=TRUE)
+  cond_data$mean_sal[i] <- mean(raw_data$Salinity, na.rm=TRUE)
+}
+
+cond_data
+
+
+
+```
+
+#  Purr section
+```{r}
+set.seed(3817)
+1:10 |> # a vector from 1 to 10 (we are going to do this 10 times)
+
+map(rnorm, n = 15) |> #random numbers from a normal distribution list
+map_dbl(mean)
+
+
+
+```
+USE FULL NAMES FOR PURR
+```{r}
+files <- dir(path = CondPath, pattern = ".csv", full.names = TRUE)
+files
+```
+
+```{r}
+data <- files |>
+  set_names() |>
+  map(read_csv)|>
+  list_rbind(names_to = "filename") |>
+  group_by(filename) |>
+  summarise(mean_temp = mean(Temperature, na.rm = TRUE),
+            mean_sal = mean(Salinity, na.rm = TRUE))
+
+data
+
+
+
+```
+
+```{r}
+data <- read_csv(files, id = "filename") |>
+  group_by(filename) |>
+  summarise(mean_temp = mean(Temperature, na.rm = TRUE),
+            mean_sal = mean(Salinity, na.rm = TRUE))
+  
+
+data
+
+```
+
+```{r}
+
+file_names <- dir(path = CondPath, pattern = ".csv") # just the file names
+
+save_temp_plot <- function(file_name) {
+  site_name <- str_remove(file_name, "\\.csv")
+  
+  p <- read_csv(paste0(CondPath,"/",file_name))|>
+    ggplot(aes(x=date, y = Temperature)) +
+    geom_line() +
+    labs(title = site_name, x = "Date", y = "Temperature (C)")
+  
+  ggsave(here("Week_13","output",paste0(site_name,"_temp.png")),
+         plot = p, width = 6, height = 4)
+}
+
+walk(file_names, save_temp_plot)
+```
+

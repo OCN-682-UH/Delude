@@ -1,0 +1,114 @@
+---
+title: "Iterative Coding Homework"
+author: "Mano'ike Delude"
+format:
+  html:
+    code-fold: true
+    code-summary: "Show code"
+    theme: minty
+---
+
+# The purpose of this script is to
+
+1.  Import, and clean the Jenn Fields' timeseries tide pool data
+2.  Summarize the mean and standard deviation of the Temperature and Light Intensity of each tide pool.
+3.  In both base R for loops and Purr map() functions.
+
+## Loading Libraries
+
+```{r}
+#| message: FALSE
+library(tidyverse)
+library(here)
+library(knitr)
+```
+
+## Importing Data
+
+```{r}
+tp_path <- here("Week_13","data","homework") #making the file path an object
+
+files <- dir(path = tp_path, pattern = ".csv") #using the object with pattern to pull all .csv from that path
+
+files #display that all the file names are in an object
+```
+
+PoolID 4 is the Control
+
+# For Loop-ing
+
+## Pre-allocating loop space
+
+```{r}
+# One row for each file and 3 columns
+tp_data <- tibble(tide_pool_ID = rep(NA, length(files)),
+                    mean_temp = rep(NA, length(files)),
+                    sd_temp = rep(NA, length(files)),
+                    mean_lux = rep(NA, length(files)),
+                    sd_lux = rep(NA, length(files)))
+
+tp_data
+```
+
+## For({})
+
+```{r}
+#| message: FALSE
+for (i in seq_along(files)) {
+
+  raw_data <- read_csv(paste0(tp_path, "/", files[i]))
+
+  tp_data$tide_pool_ID[i] <- files[i]
+  tp_data$mean_temp[i] <- mean(raw_data$Temp.C, na.rm = TRUE) #Calculates Mean temp of each Tide Pool
+  tp_data$sd_temp[i] <- sd(raw_data$Temp.C, na.rm = TRUE) #Calculates the standard deviation of that temp
+  tp_data$mean_lux[i] <- mean(raw_data$Intensity.lux, na.rm = TRUE) #Calculates Mean Lux of each Tide Pool
+  tp_data$sd_lux[i] <- sd(raw_data$Intensity.lux, na.rm = TRUE) #Calculates the standard deviation of that Lux
+}
+
+tp_data
+```
+
+Wow, we can see that the Control (TP4) and the TP1 have lower mean light intensities than TP2 and 3, something to keep in mind when analyzing the data further. Temperature seems to be pretty close otherwise, with all the SDs overlapping each mean_temp.
+
+# With purr's map()
+
+## Alt method to reading in files
+
+```{r}
+files2 <- dir(path = tp_path, pattern = ".csv", full.names = TRUE) # saves the entire path
+files2
+```
+
+## map() code
+
+```{r}
+#| message: FALSE
+tp_data2 <- files2 |>
+  set_names() |>
+  map(read_csv) |>
+  list_rbind(names_to = "filename") |>
+  group_by(PoolID) |>
+#Did this one by PoolID to confirm that each file is its own pool
+  summarize(mean_temp = mean(Temp.C, na.rm = TRUE),
+            sd_temp = sd(Temp.C, na.rm = TRUE),
+            mean_lux = mean(Intensity.lux, na.rm = TRUE),
+            sd_lux = sd(Intensity.lux, na.rm = TRUE))
+
+tp_data2
+
+```
+
+# Output
+
+```{r}
+#| label: tbl-tide
+#| tbl-cap: "Tidial Pool Means and SDs for C and Lux"
+#| tbl-subcap: 
+#|   - "For Loop method" 
+#|   - "map() method"
+
+kable(tp_data)
+kable(tp_data2)
+```
+
+There's no difference between grouping by file name @tbl-tide-1, and by PoolID @tbl-tide-2.
